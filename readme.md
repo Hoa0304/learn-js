@@ -28,4 +28,13 @@ setTimeout(function() {
 }, 1000)
 ```
 - Ví dụ ở trên ```1000``` là nơi để mình set time, ở đơn vị là mili giây, 1000mls= 1s.
-6. Set interval : tương tự ở trên nhưng là thực thi liên tục k ngừng. Time mình set là 1s thì cứ cách 1s sẽ thực thi tiếp.
+6. Set interval : tương tự ở trên nhưng là thực thi liên tục . Time mình set là 1s thì cứ cách 1s sẽ thực thi tiếp.
+
+> 1.2.3 ba hàm này bậc lên cửa sổ hộp thoại.
+### Toán tử 
+1. Toán tử số học - Arithmetic.
+    - [Arithmetic](js/Arithmetic.js) 
+2. Toán tử gán - Assignment: ```=```.
+3. Toán tử so sánh - Comparison: ```==```.
+4. Toán tử logic - Logical: ```&&```.
+- [here](js/Toantu.js) 
