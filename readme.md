@@ -97,6 +97,10 @@ var a = x++ + --x;
 
 - Bài làm  :
     - [Comparison](js/Comparison.js) 
-4. Toán tử logic - Logical: ```&&```.
+4. Toán tử logic - Logical: ```&&```, ```||```, ```!```.
+- [logical](js/logical.js) 
+
 5. Toán tử nối chuỗi: ```+```.
+- [Chuỗi](js/chuoi.js) 
+
 - [here](js/Toantu.js) 
