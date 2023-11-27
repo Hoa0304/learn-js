@@ -68,3 +68,15 @@ console.log(number2); // 3
 
 // Toán tử -- tương tự các bạn nhé, điểm khác
 // là thay vì cộng 1 trừ toán tử -- sẽ trừ 1
+
+var a = 1;
+var b = ++a * a--;
+
+console.log(b); // Output: 4
+
+
+var lastName = 'Cam';
+var firstName = ' Hoa';
+var fullName = firstName + lastName;
+
+console.log(fullName) // Output: Cam Hoa

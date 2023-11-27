@@ -64,11 +64,20 @@ setTimeout(function() {
 
 </details>
 
-3. Toán tử so sánh - Comparison: ```==```.
-4. Toán tử logic - Logical: ```&&```.
-
 - x++ tăng giá trị biến lên 1 và trả về giá trị trước khi tăng.
 - ++x tăng giá trị biến lên 1 và trả về giá trị sau khi tăng.
 - x-- giảm giá trị biến xuống 1 và trả về giá trị trước khi giảm.
 - --x giảm giá trị biến xuống 1 và trả về giá trị sau khi giảmm.
+
+```js
+var x = 1 ;
+
+var a = x++ + --x;
+```
+
+> 1 + 1 = 2.
+
+3. Toán tử so sánh - Comparison: ```==```.
+4. Toán tử logic - Logical: ```&&```.
+5. Toán tử nối chuỗi: ```+```.
 - [here](js/Toantu.js) 
