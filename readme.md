@@ -32,9 +32,26 @@ setTimeout(function() {
 
 > 1.2.3 ba hàm này bậc lên cửa sổ hộp thoại.
 ### Toán tử 
-1. Toán tử số học - Arithmetic.
+
+<details>
+<summary>1. Toán tử số học - Arithmetic.</summary>
+
+- Cộng: ```+```.
+- Trừ: ```-```.
+- Nhân: ```*```.
+- Chia: ```/```.
+- Lũy thừa: ```**```.
+- Chia lấy số dư: ```%```.
+- Tăng 1 giá trị số: ```++```.
+- Giam 1 giá trị số: ```--```.
+
+</details>
+
+- Bài làm  :
     - [Arithmetic](js/Arithmetic.js) 
+
 2. Toán tử gán - Assignment: ```=```.
+
 3. Toán tử so sánh - Comparison: ```==```.
 4. Toán tử logic - Logical: ```&&```.
 - [here](js/Toantu.js) 
