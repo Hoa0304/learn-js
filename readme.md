@@ -50,8 +50,25 @@ setTimeout(function() {
 - Bài làm  :
     - [Arithmetic](js/Arithmetic.js) 
 
-2. Toán tử gán - Assignment: ```=```.
+<details>
+<summary>2. Toán tử gán - Assignment.</summary>
+
+| Toán tử  |   Ví dụ     | Tương đương   |
+|:--------:|:-----------:|:-------------:|
+|   =   |  x = y  |   x = y |
+|   +=  | x += y | x = x + y |
+| -= | x -= y | x = x - y |
+|  *= | x *= y | x = x * y |
+|  /= | x /= y | x =x / y |
+| **= | x **= y | x = x ** y |
+
+</details>
 
 3. Toán tử so sánh - Comparison: ```==```.
 4. Toán tử logic - Logical: ```&&```.
+
+- x++ tăng giá trị biến lên 1 và trả về giá trị trước khi tăng.
+- ++x tăng giá trị biến lên 1 và trả về giá trị sau khi tăng.
+- x-- giảm giá trị biến xuống 1 và trả về giá trị trước khi giảm.
+- --x giảm giá trị biến xuống 1 và trả về giá trị sau khi giảmm.
 - [here](js/Toantu.js) 
