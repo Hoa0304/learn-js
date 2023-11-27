@@ -104,3 +104,31 @@ var a = x++ + --x;
 - [Chuỗi](js/chuoi.js) 
 
 - [here](js/Toantu.js) 
+### Kiểu dữ liệu
+1. Kiểu dữ liệu nguyên thủy - primitive Data.
+- Number.
+- String.
+- Boolean.
+- Undefined: biến chưa dc định nghĩa chưa dc khởi tạo giá trị.
+- Null.
+- Symbol: unique (duy nhất).
+2. Dữ liệu phức tạp - Complex Data.
+- Function.
+- Object :
+    - Object.
+    - Array.
+
+#### typeof : kiểm tra kiểu dữ liệu
+
+> console.log(typeof null) thì ra object
+
+```
+Dáu nháy đơn :  \'
+Dâu nháy kép :  \"
+Xuông dòng   :  \n
+Dâu thoát    :  \\
+Dâu tab      :  \t
+Xoá nguoc 1 kí tự : \b
+```
+
+- [here](js/kieuDuLieu.js) 
