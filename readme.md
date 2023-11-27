@@ -50,19 +50,6 @@ setTimeout(function() {
 - Bài làm  :
     - [Arithmetic](js/Arithmetic.js) 
 
-<details>
-<summary>2. Toán tử gán - Assignment.</summary>
-
-| Toán tử  |   Ví dụ     | Tương đương   |
-|:--------:|:-----------:|:-------------:|
-|   =   |  x = y  |   x = y |
-|   +=  | x += y | x = x + y |
-| -= | x -= y | x = x - y |
-|  *= | x *= y | x = x * y |
-|  /= | x /= y | x =x / y |
-| **= | x **= y | x = x ** y |
-
-</details>
 
 - x++ tăng giá trị biến lên 1 và trả về giá trị trước khi tăng.
 - ++x tăng giá trị biến lên 1 và trả về giá trị sau khi tăng.
@@ -77,7 +64,39 @@ var a = x++ + --x;
 
 > 1 + 1 = 2.
 
-3. Toán tử so sánh - Comparison: ```==```.
+<details>
+<summary>2. Toán tử gán - Assignment.</summary>
+
+| Toán tử  |   Ví dụ     | Tương đương   |
+|:--------:|:-----------:|:-------------:|
+|   =   |  x = y  |   x = y |
+|   +=  | x += y | x = x + y |
+| -= | x -= y | x = x - y |
+|  *= | x *= y | x = x * y |
+|  /= | x /= y | x =x / y |
+| **= | x **= y | x = x ** y |
+
+</details>
+
+- Bài làm  :
+    - [Assignment](js/Assignment.js) 
+
+<details>
+<summary>3. Toán tử so sánh - Comparison.</summary>
+
+| Toán tử  |   |   |
+|:--------:|:-----------:|:-------------:|
+|   ==   |  -->  |   Bằng |
+|   !=   |  -->  |  Không bằng |
+|    >   |  -->  |   Lớn hơn |
+|   <    |  -->  |   Nhỏ hơn |
+|   >=   |  -->  |   Lớn hơn hoặc bằng |
+|   <=   |  -->  |   nhỏ hơn hoặc bằng |
+
+</details>
+
+- Bài làm  :
+    - [Comparison](js/Comparison.js) 
 4. Toán tử logic - Logical: ```&&```.
 5. Toán tử nối chuỗi: ```+```.
 - [here](js/Toantu.js) 
