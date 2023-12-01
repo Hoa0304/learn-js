@@ -93,6 +93,8 @@ var a = x++ + --x;
 |   >=   |  -->  |   Lớn hơn hoặc bằng |
 |   <=   |  -->  |   nhỏ hơn hoặc bằng |
 
+##### So sánh bằng tuyệt đối === và !== : cả kiểu dữ liệu
+
 </details>
 
 - Bài làm  :
@@ -132,3 +134,27 @@ Xoá nguoc 1 kí tự : \b
 ```
 
 - [here](js/kieuDuLieu.js) 
+
+### Truthy và Falsy là gì?
+- Bất cứ giá trị nào trong Javascript khi chuyển đổi sang kiểu dữ liệu __boolean__ mà có giá trị __true__ thì ta gọi giá trị đó là __Truthy__.
+> !! là gì? Đơn giản thôi. Toán tử ! là toán tử not (phủ định) nên !! là 2 lần phủ định, mà 2 lần phủ định lại trở thành "khẳng định". Trong Javascript thì đây là một "tip" để convert (chuyển đổi) mọi kiểu dữ liệu khác sang Boolean.
+- Thêm !! phía trước các giá trị truthy sẽ luôn trả về true.
+
+- Bất cứ giá trị nào trong Javascript khi chuyển đổi sang kiểu dữ liệu boolean mà có giá trị false thì ta gọi giá trị đó là Falsy.
+
+- Trong Javascript có 6 giá trị sau được coi là Falsy:
+
+1. false
+2. 0 (số không)
+3. '' or "" (chuỗi rỗng)
+4. null
+5. undefined
+6. NaN
+
+-  Note : Ngoài 6 giá trị đã đề cập tới ở phần Falsy thì toàn bộ các giá trị khác đều là Truthy, kể cả những giá trị sau:
+1. '0' (một chuỗi chứa số không)
+2. ' ' (một chuỗi chứa dấu cách)
+3. 'false' (một chuỗi chứa từ khóa false)
+4. [] (một array trống)
+5. {} (một object trống)
+6. function(){} (một hàm "trống")
