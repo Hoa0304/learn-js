@@ -14,3 +14,13 @@ var isOdd = remain === 1;
 
 // In giá trị của biến isOdd ra cửa sổ console của trình duyệt
 console.log(isOdd) // Output: true
+
+
+let x = 5;
+let y = 5;
+console.log(x === y); //true
+
+x !== y; //x != y và x khác kiểu dữ liệu y
+
+console.log(5 !== 10); //false, vì khác giá trị nhưng cùng kiểu dữ liệu
+console.log(5 !== '10'); //true
