@@ -15,3 +15,10 @@ function triple(x) {
 
 var resultt = triple(10)
 console.log(resultt)
+
+function message() {
+    function message2() {
+        console.log('message');
+    }
+    message2();
+}

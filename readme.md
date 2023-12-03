@@ -197,3 +197,7 @@ Xoá nguoc 1 kí tự : \b
 ### Từ khóa return trong hàm
 - Một hàm nếu không ```return``` thì kết quả mặc định sẽ là undefined.
     - Cách sử dụng : [here](js/return.js) 
+- Một số điều cần biết về function: 
+    - Khi function trùng tên : nhận function sau, function sau đè function trước.
+    - Khai báo biến trong hàm : phạm vi sử dụng chỉ ở trong hàm.
+    - Định nghĩa hàm trong hàm : phạm vi sử dụng chỉ ở trong hàm.
