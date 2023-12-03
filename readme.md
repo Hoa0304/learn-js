@@ -106,7 +106,7 @@ var a = x++ + --x;
 | Toán tử  |   Diễn tả    | 
 |:--------:|:-----------:|
 |   &&   | phép và (toán tử && trong javascript) trả về true nếu 2 số hạng là true: a && b |
-|||| phép hoặc toán tử hoặc trong javascript trả về true nếu 1 trong 2 số hạng là true : a | 
+|| phép hoặc toán tử hoặc trong javascript trả về true nếu 1 trong 2 số hạng là true : a | 
 | ! |phủ định; !a trả về giá trị ngược với biểu thức a |
 
 5. Toán tử nối chuỗi: ```+```.
