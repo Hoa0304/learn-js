@@ -20,6 +20,8 @@ __Sự khác biệt giữa không có ```;``` cuối dòng code và có : Nếu 
 3. Confirm : Tạo ra hộp thoại để xác nhận.
 4. Prompt : Tạo ra hộp thoại để xác nhận và dưới cái text mình cho sẽ có 1 ô input cho người dùng nhập vào.
 5. Set timeout : thực thi 1 đoạn code sau 1 khoảng thời gian mình set. Chỉ thực thi 1 lần duy nhất.
+
+> 1.3.4 khi cửa sổ bật lên thì sẽ ngăn cản các hành động khác.Chỉ khi ấn xác nhận thì các hành động tiếp theo mới được diễn ra, cách giải quyết ở phần return trong hàm.
 - Kí hiệu :
 ```js
 setTimeout(function() {
@@ -30,7 +32,6 @@ setTimeout(function() {
 - Ví dụ ở trên ```1000``` là nơi để mình set time, ở đơn vị là mili giây, 1000mls= 1s.
 6. Set interval : tương tự ở trên nhưng là thực thi liên tục . Time mình set là 1s thì cứ cách 1s sẽ thực thi tiếp.
 
-> 1.2.3 ba hàm này bậc lên cửa sổ hộp thoại.
 ### Toán tử 
 
 <details>
@@ -191,5 +192,8 @@ Xoá nguoc 1 kí tự : \b
     - Đối tượng.
     - vòng for of( lập đi lập lại , số lần chạy = số element mà đang có trong arguments [được truyền vào]).
     - nó là array.
-    - Cách sử dụng : [here](js/function.js) 
+    - Cách sử dụng : [here](js/function.js) .
 
+### Từ khóa return trong hàm
+- Một hàm nếu không ```return``` thì kết quả mặc định sẽ là undefined.
+    - Cách sử dụng : [here](js/return.js) 
