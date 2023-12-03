@@ -236,7 +236,7 @@ var myObject = {
 <summary>1. Có 2 cách để tạo:</summary>
 
 
-    - Cách 1:
+- Cách 1:
 
     ```js
 
@@ -244,12 +244,12 @@ var myObject = {
 
     ```
 
-    - Cách 2:
+- Cách 2:
 
     ```js
 
     var options = new String('Hello')
-    
+
     ```
 
 - Nên dùng cách 1 vì cách 2 dài dòng và cách 2 đang khởi tạo 1 đối tượng, tạo ra 1 ít tình, Khó khăn trong việc kiểm tra kiểu dữ liệu.
