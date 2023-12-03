@@ -239,13 +239,17 @@ var myObject = {
     - Cách 1:
 
     ```js
+
     var fullName = 'Tran Thi Cam Hoa';
+
     ```
 
     - Cách 2:
 
     ```js
+
     var options = new String('Hello')
+    
     ```
 
 - Nên dùng cách 1 vì cách 2 dài dòng và cách 2 đang khởi tạo 1 đối tượng, tạo ra 1 ít tình, Khó khăn trong việc kiểm tra kiểu dữ liệu.
