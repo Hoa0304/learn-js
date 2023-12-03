@@ -230,3 +230,72 @@ var myObject = {
 }
 ```
 3. Arrow function.
+
+### Kiểu dữ liệu chuỗi (string)
+<details>
+<summary>1. Có 2 cách để tạo:</summary>
+
+
+    - Cách 1:
+
+    ```js
+    var fullName = 'Tran Thi Cam Hoa';
+    ```
+
+    - Cách 2:
+
+    ```js
+    var options = new String('Hello')
+    ```
+
+- Nên dùng cách 1 vì cách 2 dài dòng và cách 2 đang khởi tạo 1 đối tượng, tạo ra 1 ít tình, Khó khăn trong việc kiểm tra kiểu dữ liệu.
+```js
+var fullName = 'Tran Thi Cam Hoa';
+
+var options = new String('Hello')
+
+console.log(typeof options)
+//thay vì là string thì nó ra là object
+```
+
+</details>
+
+2. Một số case sử dụng backslash (\).
+
+    - Dáu nháy đơn :  \' .
+    - Dâu nháy kép :  \".
+    - Xuông dòng   :  \n.
+    - Dâu thoát    :  \\.
+    - Dâu tab      :  \t.
+    - Xoá nguoc 1 kí tự : \b.
+
+3. Xem độ dài chuỗi: ```.lenght``` . 
+```js
+var lorem = "lorem ipsum dolor sit amet consectetur con laoreet inter sapien"
+console.log(lorem.length)
+//63
+```
+
+- Dùng ```+``` để nối chuỗi với nhau (xuống dòng nếu dài quá) hoặc xún hàng.
+```js
+var lorem = 
+"lorem ipsum dolor sit amet consectetur con laoreet inter sapien"
+```
+
+4. Template string ES6 : nhớ dùng ``` ` ``` không phải ```'```.
+    - Cách sử dụng : [here](js/string.js) 
+
+<details>
+<summary>Các cách làm việc với chuỗi</summary>
+
+1. Length.
+2. Find index.
+3. Cut string
+4. Replace.
+5. Convert to upper case.
+6. Convert to lower case.
+7. Trim.
+8. Split.
+9. Get a character by index.
+
+</details>
