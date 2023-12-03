@@ -164,3 +164,32 @@ Xoá nguoc 1 kí tự : \b
 4. [] (một array trống)
 5. {} (một object trống)
 6. function(){} (một hàm "trống")
+
+### Hàm (function)
+1. Hàm ?
+- Một khối mã.
+- Làm 1 việc cụ thể.
+2. Loại hàm.
+- Built-in.
+- Tự định nghĩa.
+3. Tính chất.
+- Không thực thi khi định nghĩa.
+- Sẽ thực thi khi được gọi.
+- Có thể nhận tham số.
+- Có thể trả về 1 giá trị.
+
+### Tham số trong hàm 
+> tham số : parameter.
+1. Tham số.
+    - Định nghĩa : là 1 giá trị được truyền vào.
+    - Không giới hạn kiểu dữ liệu.
+    - Tính private, chỉ dùng parameter trong cặp ngoặc nhọn của function.
+2. Truyền tham số.
+    - 1 tham số.
+    - Nhiều tham số.
+3. Arguments?
+    - Đối tượng.
+    - vòng for of( lập đi lập lại , số lần chạy = số element mà đang có trong arguments [được truyền vào]).
+    - nó là array.
+    - Cách sử dụng : [here](js/function.js) 
+
