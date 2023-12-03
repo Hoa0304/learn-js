@@ -201,3 +201,32 @@ Xoá nguoc 1 kí tự : \b
     - Khi function trùng tên : nhận function sau, function sau đè function trước.
     - Khai báo biến trong hàm : phạm vi sử dụng chỉ ở trong hàm.
     - Định nghĩa hàm trong hàm : phạm vi sử dụng chỉ ở trong hàm.
+
+### Các loại function
+
+1. Declaration function: đầu tiên là ```function``` theo sau sẽ là tên, khong có tên thì k phải là declaration.
+    - gọi hàm được trước cái mình tạo hàm(hosting).
+```js
+function message() {
+
+}
+// thực chất thì nó là 1 declaration function
+```
+2. Expression function: có thể đặc tên hoặc không.
+    - Nếu đặt tên thì chỉ có mục đích: dễ hiểu.
+```js
+var message = function() {
+
+}
+
+setTimeout(function autoLogin() {
+
+});
+
+var myObject = {
+    myFunction: function() {
+
+    }
+}
+```
+3. Arrow function.
