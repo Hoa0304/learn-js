@@ -292,14 +292,70 @@ var lorem =
 <details>
 <summary>Các cách làm việc với chuỗi</summary>
 
-1. Length.
-2. Find index.
-3. Cut string
-4. Replace.
-5. Convert to upper case.
-6. Convert to lower case.
-7. Trim.
-8. Split.
-9. Get a character by index.
+- Cách sử dụng : [here](js/string.js).
+
+1. Length: đo đường dài của 1 chuỗi.
+2. Find index: tìm vị trí của kí tự trong 1 chuỗi.
+```js
+var myString = 'lorem ipsum dolor sit amet ipsum'
+
+console.log(myString.search('ipsum'))
+//6
+console.log(myString.indexOf('i', 9))
+//27
+```
+
+- Tìm vị trí cuối cùng trong chuỗi dùng ```.lastIndexOf```.
+- Trong trường hợp không tìm được thì trả về giá trị ```-1```.
+
+- Khác nhau giữa ```search``` và ```indexOf``` :
+    - ```search``` : tìm kiếm theo biểu thức chính quy và không thể tìm vị trí ở sau như ```indexOf```.
+3. Cut string.
+```js
+var myString = 'lorem ipsum dolor sit amet ipsum'
+console.log(myString.slice(4,14))
+//m ipsum do
+```
+4. Replace: thay chữ.
+- Thay 1 cụm chữ đầu.
+
+```js
+console.log(myString.replace('ipsum', 'Hoa' ))
+```
+
+- Kiếm tất cả các chữ ```ipsum``` thay bằng ```Hoa```.
+```js
+console.log(myString.replace(/ipsum/g, 'Hoa' ))
+```
+5. Convert to upper case: chuyển đổi 1 chuỗi tất cả thành chữ hoa.
+```js
+console.log(myString.toUpperCase())
+```
+6. Convert to lower case: chuyển đổi 1 chuỗi tất cả thành chữ thường.
+```js
+console.log(myString.toLowerCase())
+```
+7. Trim: loại bỏ tất cả khoảng trắng.
+```js
+console.log(myString.trim().length)
+```
+8. Split: cắt 1 cái chuỗi thành 1 array, và phải có 1 điểm chung để tách.
+```js
+var languages = 'Hoa, Man, Dat';
+console.log(languages.split(', '))
+// [ 'Hoa', 'Man', 'Dat' ]
+```
+- Nếu muốn tách từng chữ thì dùng ```('')```.
+9. Get a character by index: tách chữ trong 1 chuỗi cho trước.
+
+
+    
+```js
+
+const myString2 = 'Hoa Tran';
+console.log(myString2.charAt(0))
+//H
+
+```
 
 </details>
