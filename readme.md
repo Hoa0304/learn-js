@@ -264,14 +264,14 @@ console.log(typeof options)
 
 </details>
 
-2. Một số case sử dụng backslash (\).
+2. Một số case sử dụng backslash ```(\)```.
 
-    - Dáu nháy đơn :  \' .
-    - Dâu nháy kép :  \".
-    - Xuông dòng   :  \n.
-    - Dâu thoát    :  \\.
-    - Dâu tab      :  \t.
-    - Xoá nguoc 1 kí tự : \b.
+    - Dáu nháy đơn :  ```\'``` .
+    - Dâu nháy kép :  ```\"```.
+    - Xuông dòng   :  ```\n```.
+    - Dâu thoát    :  ```\\```.
+    - Dâu tab      :  ```\t```.
+    - Xoá nguoc 1 kí tự : ```\b```.
 
 3. Xem độ dài chuỗi: ```.lenght``` . 
 ```js
@@ -359,3 +359,21 @@ console.log(myString2.charAt(0))
 ```
 
 </details>
+
+
+### Kiểu dữ liệu số (number)
+
+- Kiểu số - Number :
+    1. Các số thông thường trong Javascript được lưu trữ dưới dạng 64 bit IEEE-754 (còn được gọi là các số phẩy động). Trong hầu hết các trường hợp khi làm việc với Javascript là chúng ta sử dụng loại số này.
+    2. Số BigInt là loại số sử dụng để biểu thị số nguyên có độ dài tùy ý.
+
+| **Phương thức**  | **Vai trò**  |
+|:--------:|:-----------:|
+|   Number.isFinite()   |  Xác định xem giá trị đã cho có phải là số hữu hạn hay không. Trả về boolean  | 
+|   Number.isInteger()  |  Xác định xem giá trị đã cho có phải là số nguyên hay không. Trả về boolean  |  
+|    Number.parseFloat()   | Chuyển đổi chuỗi đã cho thành một số dấu phẩy động  |   
+|   Number.parseInt()    |  Chuyển đổi chuỗi đã cho thành một số nguyên  |  
+|   Number.prototype.toFixed()  |  Chuyển đổi và trả về chuỗi đại diện cho số đã cho, có số chữ số chính xác sau dấu thập phân  |  
+|   Number.prototype.toString()   |  Chuyển đổi và trả về số đã cho dưới dạng chuỗi |
+
+- Cách sử dụng : [here](js/number.js).
