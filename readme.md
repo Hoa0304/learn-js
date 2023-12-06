@@ -156,7 +156,7 @@ Xoá nguoc 1 kí tự : \b
 3. '' or "" (chuỗi rỗng)
 4. null
 5. undefined
-6. NaN
+6. NaN : đại diện cho 1 số k hợp lệ.
 
 -  Note : Ngoài 6 giá trị đã đề cập tới ở phần Falsy thì toàn bộ các giá trị khác đều là Truthy, kể cả những giá trị sau:
 1. '0' (một chuỗi chứa số không)
@@ -370,10 +370,17 @@ console.log(myString2.charAt(0))
 | **Phương thức**  | **Vai trò**  |
 |:--------:|:-----------:|
 |   Number.isFinite()   |  Xác định xem giá trị đã cho có phải là số hữu hạn hay không. Trả về boolean  | 
-|   Number.isInteger()  |  Xác định xem giá trị đã cho có phải là số nguyên hay không. Trả về boolean  |  
+|   Number.isInteger()  |  Xác định xem giá trị đã cho có phải là số nguyên hay không. Trả về boolean  | 
 |    Number.parseFloat()   | Chuyển đổi chuỗi đã cho thành một số dấu phẩy động  |   
 |   Number.parseInt()    |  Chuyển đổi chuỗi đã cho thành một số nguyên  |  
 |   Number.prototype.toFixed()  |  Chuyển đổi và trả về chuỗi đại diện cho số đã cho, có số chữ số chính xác sau dấu thập phân  |  
 |   Number.prototype.toString()   |  Chuyển đổi và trả về số đã cho dưới dạng chuỗi |
 
+- Cách sử dụng : [here](js/number.js).
+
+#### Làm việc với số
+1. Tạo giá trị number: có 2 cách.
+    - Thường và gọi từ khóa new giống string.
+2. Làm việc với number.
+    - Hàm check NaN : ```isNaN```.
 - Cách sử dụng : [here](js/number.js).
