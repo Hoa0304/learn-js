@@ -384,3 +384,116 @@ console.log(myString2.charAt(0))
 2. Làm việc với number.
     - Hàm check NaN : ```isNaN```.
 - Cách sử dụng : [here](js/number.js).
+
+### Làm việc với mảng
+- Khi dùng ```typeof``` thì là object.
+- Hàm check array : ```isArray```.
+- Truy xuất mảng : Lấy phần tử trong mảng.
+```js
+var games = ['lien quan',
+    'ngoi sao lap lanh',
+    'dai hiep chay di'
+]
+console.log(games[2])
+// ngoi sao lap lanh
+```
+
+
+<details>
+<summary>Các cách làm việc với mảng</summary>
+
+
+1. To String.
+```js
+var languages = ['js', 'ru', 'java', 'C++']
+
+console.log(languages.toString())
+//js,ru,java,C++
+```
+2. Join.
+```js
+var languages = ['js', 'ru', 'java', 'C++']
+
+console.log(languages.join(' '))
+//js ru java C++
+console.log(languages.join(', '))
+//js, ru, java, C++
+console.log(languages.join(' - '))
+//js - ru - java - C++
+```
+3. Pop: xóa element cuối mảng và trả về phần tử đã xóa.
+- Khi ```pop()``` đến hết không còn phần tử thì trả về ```undefined``` và in ra mảng là ```[]``` .
+
+```js
+var languages = ['js', 'ru', 'java', 'C++']
+
+console.log(languages.pop())
+//C++
+```
+
+4. Push: thêm phần tử ở cuối mảng, và trả về độ dài mới của mảng .
+```js
+var languages = ['js', 'java', 'C++']
+console.log(languages.push('C#', 'JavaScript'))
+//5
+```
+
+5. Shift: xóa phần tử đầu tiên của mảng( tương tự ```pop()```).
+
+6. Unshift: tương tự ```push()``` nhưng đầu mảng.
+7. Splicing: xóa 1 phần tử bất kì trong mảng.
+```js
+var languages = ['js', 'java', 'C++']
+console.log(languages.splice(0,1))
+//java,C++
+```
+- ```0``` : vị trí con trỏ đặt ở đâu trong mảng.
+- ```1``` : xóa từ con trỏ trở đi bao nhiêu mảng.
+- __Có thể chèn 1 element vào bất kì đâu__.
+```js
+var languages = ['js', 'java', 'C++']
+console.log(languages.splice(2,0, 'ru'))
+//js,java,ru,C++
+```
+
+- Có thể dùng để thay 1 element.
+```js
+var languages = ['js', 'java', 'C++']
+console.log(languages.splice(2,1, 'ru'))
+//js,java,ru
+```
+
+8. Concat: nối array.
+
+```js
+var languages = ['js', 'ru', 'java', 'C++']
+var games = ['lien quan',
+    'ngoi sao lap lanh'              ,
+    'dai hiep chay di'
+]
+
+console.log(languages.concat(games))
+/*[
+    'java',      
+    'dai hiep chay di'
+  ]     
+*/
+
+```
+9. Slicing: cắt 1 vài element or 1 mảng.
+- Truyền vào giá trị âm hay dương đều được.
+```js
+var games = ['lien quan',
+    'ngoi sao lap lanh',
+    'dai hiep chay di'
+]
+
+console.log(languages.slice(0, 1))
+//ngoi sao lap lanh,dai hiep chay di
+
+console.log(languages.slice(1))
+=> cắt nguyên cái mảng
+//slice(0): sao chép mảng
+```
+
+</details>
