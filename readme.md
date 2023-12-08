@@ -239,9 +239,7 @@ var myObject = {
 - Cách 1:
 
     ```js
-
     var fullName = 'Tran Thi Cam Hoa';
-
     ```
 
 - Cách 2:
@@ -522,3 +520,4 @@ console.log(myInfo['age']) //c2
 ```
 
 #### Object constructor
+
