@@ -605,3 +605,7 @@ var date = new Date();
 - Bài tập thêm : [here](js/mathOj.js).
 
 </details>
+
+### Lệnh rẽ nhánh If else
+
+- Bài tập thêm : [here](js/if.js).
