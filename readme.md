@@ -589,3 +589,19 @@ var date = new Date();
 - Bài tập thêm : [here](js/data.js).
 
 - Tham khảo thêm tại : [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date).
+
+<details>
+<summary>Math Object</summary>
+
+- ```Math.PI``` : trả về số PI chi tiết.
+- ```Math.round()``` : làm tròn số .
+- ```Math.abs()``` : giá trị tuyệt đối.
+- ```Math.ceil()``` : làm tròn trên.
+- ```Math.floor()``` : làm tròn dưới.
+- ```Math.random()``` : trả về 1 dãy số thập phân nhỏ hơn 1.
+- ```Math.min()``` : trả về số nhỏ nhất.
+- ```Math.max()``` : trả về số lớn nhất.
+
+- Bài tập thêm : [here](js/mathOj.js).
+
+</details>
