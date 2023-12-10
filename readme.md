@@ -522,7 +522,7 @@ console.log(myInfo['age']) //c2
 #### Object constructor : xây dựng đối tượng (mô tả 1 đối tượng)
 
 - Nhanh hơn , gọn hơn và dễ dàng hơn.
-
+- Khi thêm 1 thuộc tính cho 1 đối tượng nào thì sẽ của mỗi đối tượng đó.
 ```js
 function User(firstName, lastName, avatar){
     this.firstName = firstName;
@@ -559,3 +559,24 @@ User {
 */
 ```
 
+#### prototype : nguyên mẫu (để tạo nên 1 đối tượng)
+- Thêm một thuộc tính bên ngoài hàm tạo, còn bên trong là ```this``` .
+- Tính chất : thêm vào đối tượng được tạo ra.
+```js
+function User(firstName, lastName, avatar){
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.avatar = avatar;
+}
+
+User.prototype.className = '22ITe';
+
+var author = new User('Hoa', 'Trần', 'Avatar');
+var user= new User('Mẫn', 'Trần', 'Avatar');
+
+console.log(author.className);
+console.log(user);
+```
+- Phải gọi nó ra thì mới thấy nó được nếu ở terminal, còn ở web thì nó ở ```__proto__``` .
+
+- Bài tập thêm : [here](js/prototype.js).
