@@ -580,3 +580,12 @@ console.log(user);
 - Phải gọi nó ra thì mới thấy nó được nếu ở terminal, còn ở web thì nó ở ```__proto__``` .
 
 - Bài tập thêm : [here](js/prototype.js).
+#### Đối tượng Date
+- Object : đối tượng.
+```js
+var date = new Date();
+```
+- Nếu bỏ ```new``` thì là ```string```
+- Bài tập thêm : [here](js/data.js).
+
+- Tham khảo thêm tại : [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date).
