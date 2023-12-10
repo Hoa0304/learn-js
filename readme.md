@@ -519,7 +519,43 @@ console.log(myInfo['age']) //c2
 // kq: 18
 ```
 
-#### Object constructor : xây dựng đối tượng
+#### Object constructor : xây dựng đối tượng (mô tả 1 đối tượng)
 
+- Nhanh hơn , gọn hơn và dễ dàng hơn.
 
+```js
+function User(firstName, lastName, avatar){
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.avatar = avatar;
+        this.getName = function() {
+        return `${this.firstName} ${this.lastName}`
+    }
+}
+
+var author = new User('Hoa', 'Trần', 'Avatar');
+var user= new User('Mẫn', 'Trần', 'Avatar');
+
+author.title = 'con gái';
+user.comment = 'trai';
+
+console.log(author);
+console.log(user);
+/*
+User {
+  firstName: 'Hoa',
+  lastName: 'Trần',
+  avatar: 'Avatar',
+  getName: [Function],
+  title: 'con gái'
+}
+User {
+  firstName: 'Mẫn',
+  lastName: 'Trần',
+  avatar: 'Avatar',
+  getName: [Function],
+  comment: 'trai'
+}   
+*/
+```
 
