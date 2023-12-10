@@ -21,3 +21,10 @@ console.log(bonus[random])
  if(random < 10) {
     console.log('ra rồi má')
  }
+
+ //----
+ var random = Math.floor(Math.random() *5)
+
+function getRandomItem(bonus) {
+    return bonus[random]
+}
