@@ -519,5 +519,7 @@ console.log(myInfo['age']) //c2
 // kq: 18
 ```
 
-#### Object constructor
+#### Object constructor : xây dựng đối tượng
+
+
 
