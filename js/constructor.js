@@ -16,3 +16,11 @@ user.comment = 'trai';
 
 console.log(author);
 console.log(user);
+
+function Animal(name, leg, speed) {
+    this.name= name;
+    this.leg = leg;
+    this.speed = speed;
+}
+
+var parrot = new Animal('Cho', 4, '50m/s')
