@@ -631,3 +631,6 @@ switch (date) {
 }
 ```
 - Bài tập thêm : [here](js/switch.js).
+
+#### Toán tử 3 ngôi (Ternary operator)
+- Bài tập thêm : [here](js/ternary.js).
