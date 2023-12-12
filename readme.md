@@ -636,3 +636,44 @@ switch (date) {
 - If else nhiều thì không nên dùng.
 - Nếu đơn giản thì dùng, phức tạp k nên dùng.
 - Bài tập thêm : [here](js/ternary.js).
+
+### Vòng lặp (LOOP)
+
+<details>
+<summary>For</summary>
+
+- Lặp với điều kiện đúng.
+
+- giá trị đầu, chạy duy nhất 1 lần_biểu thức điều kiện: quyết định vòng lặp có chạy hay k, nếu true thì chạy_tăng lên 1 giá trị.
+
+</details>
+
+<details>
+<summary>For/in</summary>
+
+- Lặp qua key của đối tượng (array,string).
+
+</details>
+
+<details>
+<summary>For/of</summary>
+
+- Lặp qua value của đối tượng (array,string).
+
+</details>
+
+<details>
+<summary>while</summary>
+
+- Lặp khi điều kiện đúng.
+
+</details>
+
+<details>
+<summary>do/while</summary>
+
+- Lặp ít nhất 1 lần, sau đó lập khi điều kiện đúng.
+
+</details>
+
+- Bài tập thêm : [here](js/loop.js).
