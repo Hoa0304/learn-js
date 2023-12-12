@@ -633,4 +633,6 @@ switch (date) {
 - Bài tập thêm : [here](js/switch.js).
 
 #### Toán tử 3 ngôi (Ternary operator)
+- If else nhiều thì không nên dùng.
+- Nếu đơn giản thì dùng, phức tạp k nên dùng.
 - Bài tập thêm : [here](js/ternary.js).
