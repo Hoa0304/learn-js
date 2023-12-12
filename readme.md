@@ -646,6 +646,24 @@ switch (date) {
 
 - giá trị đầu, chạy duy nhất 1 lần_biểu thức điều kiện: quyết định vòng lặp có chạy hay k, nếu true thì chạy_tăng lên 1 giá trị.
 
+/**
+ * Hết sức lưu ý: Hãy suy nghĩ kỹ để đảm bảo vòng lặp (loop)
+ * luôn có điểm dừng, trình duyệt của bạn sẽ bị treo
+ * nếu vòng lặp không có điểm dừng.
+ * 
+ * VD 1: for (var i = 0; i < 100; i--) // i++ mới đúng
+ * VD 2: for (var i = 100; i >= 0; i++) // i-- mới đúng
+ * là 2 vòng lặp không có điểm dừng (lặp vô hạn)
+ * 
+ * => Treo trình duyệt!!!
+ */
+
+ - Có thể ```for(;; i++)``` nhưng nó sẽ chạy vô hạn trên trình duyệt, _bị treo trình duyệt_.
+ - Có thể ```for(;i<n; i++)``` nhưng phải có ```var i= 1``` ở trước đó thì sẽ thực thi bình thường.
+ - Vế 3 có thể để ở dưới cuối vòng for, nếu không sẽ bị treo trình duyệt.
+
+ - Bài tập thêm : [here](js/for.js).
+
 </details>
 
 <details>
