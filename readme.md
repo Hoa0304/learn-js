@@ -670,6 +670,38 @@ switch (date) {
 <summary>For/in</summary>
 
 - Lặp qua key của đối tượng (array,string).
+- Có bao nhiêu key chạy bấy nhiêu lần.
+- String :
+```js
+var myInfo = {
+    name: 'Hoa',
+    age: 25,
+    address: 'Da Nang'
+};
+
+for (var key in myInfo) {
+    console.log(key)
+    // name, age, address
+    console.log(myInfo[key])
+    // Hoa, 25, Da Nang
+}
+```
+
+- Array:
+```js
+var languages = [
+    'English',
+    'Thailand',
+    'Japan'
+]
+
+for (var key in languages) {
+    console.log(key)
+    //0, 1, 2
+    console.log(languages[key])
+    // English, Thailand, Japan
+}
+```
 
 </details>
 
