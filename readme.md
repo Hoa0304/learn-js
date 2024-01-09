@@ -709,13 +709,94 @@ for (var key in languages) {
 <summary>For/of</summary>
 
 - Lặp qua value của đối tượng (array,string).
+- Lấy ra từng value.
+- Lay ra tung phan tu cua 1 mang.
+```js
+var languages = [
+    'English',
+    'Thailand',
+    'Japan'
+]
 
+for(var value of languages) {
+    console.log(value)
+}
+
+// English
+// Thailand
+// Japan
+```
+
+- lấy ra từng kí tự của 1 chuỗi.
+
+```js
+var Hoa = 'TranThiCamHoa'
+
+for(var value of Hoa) {
+    console.log(value)
+}
+
+// T
+// r
+// a
+// n
+// T
+// h
+// i
+// C
+// a
+// m
+// H
+// o
+// a
+```
+
+- Đối với object thì phải truyền qua 1 key.
+
+```js
+
+var myObj = {
+    name: 'TranThiCamHoa',
+    age: 20,
+    languages: ['English', 'Thailand', 'Japan']
+}
+
+for(var value of Object.keys(myObj)) {
+    console.log(value)
+}
+// name
+// age
+// languages
+for(var value of Object.keys(myObj)) {
+    console.log(myObj[value])
+}
+// TranThiCamHoa
+// 20
+// [ 'English', 'Thailand', 'Japan' ]
+
+//or
+console.log(Object.values(myObj))
+//[ 'TranThiCamHoa', 20, [ 'English', 'Thailand', 'Japan' ] ]
+```
 </details>
 
 <details>
 <summary>while</summary>
 
 - Lặp khi điều kiện đúng.
+- Neu nhu k co ```i++``` thi vong lap se chay vo han.
+```js
+var i = 0
+
+while(i < 10) {
+    console.log(i)
+    i++
+}
+```
+
+- Nếu để ```i++``` trước ```console.log(i)``` thì sẽ in ra là 2 thôi chứ không có các số sau đó.
+
+ - Bài tập thêm : [here](js/while.js).
 
 </details>
 
@@ -723,6 +804,24 @@ for (var key in languages) {
 <summary>do/while</summary>
 
 - Lặp ít nhất 1 lần, sau đó lập khi điều kiện đúng.
+- Neu nhu k co ```i++``` thi vong lap se chay vo han.
+
+```js
+var i = 0
+
+do {
+    i++
+    console.log(i)
+}while (i <10)
+
+```
+- Kiểm tra điều kiện từ vòng lặp thứ 2 trở đi.
+</details>
+
+<details>
+<summary>break va</summary>
+
+
 
 </details>
 
