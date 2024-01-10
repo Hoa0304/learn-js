@@ -3,7 +3,7 @@
 - ```alert``` chỉ hiển thị được một cái, nếu có 2 cái thì sẽ hiển thị lần lượt.
 __Sự khác biệt giữa không có ```;``` cuối dòng code và có : Nếu như viết liền trên cùng 1 dòng mà k có ```;``` thì sẽ lỗi còn nếu có thì chạy bình thường__
 <details>
-<summary></summary>
+<summary>var and let</summary>
 
 Trong JavaScript, `var` và `let` là hai từ khóa để khai báo biến. Mặc dù cùng được sử dụng để khai báo biến, nhưng chúng có một số khác biệt quan trọng.
 
@@ -535,6 +535,22 @@ console.log(languages.slice(1))
 => cắt nguyên cái mảng
 //slice(0): sao chép mảng
 ```
+
+
+<details>
+<summary>Làm việc với mảng</summary>
+
+1. forEach(): duyệt qua đc từng phần tử của mảng.
+2. every(): kiểm tra tất cả các phần của 1 mảng phải thỏa mãn 1 điều kiện gì đó.
+3. some(): kiểm tra tất cả các phần của 1 mảng chỉ cần ```1 phần``` thỏa mãn 1 điều kiện gì đó thì ok.
+4. find(): tìm kiếm phần tử nếu không có thì trả về ```underfine``` chỉ trả về được 1 đối tượng. 
+5. filter(): .
+6. map(): .
+7. reduce(): .
+
+</details>
+
+
 - Cách sử dụng : [here](js/array.js).
 </details>
 
@@ -885,6 +901,13 @@ do {
 <summary>Đệ quy là gì? Học về đệ quy!</summary>
 
 - Một cái hàm khi nó tự gọi lại chính nó.
+- Flow : Chạy function ví dụ có tên deQuy() và sẽ thực thi đoạn code bên trong và đoạn code lại gọi deQuy() chính nó bên trong, tạo ra 1 vòng lặp vô hạn, ngta gọi là stack ( lặp vô hạn, tràn bộ nhớ ).
+
+- A-> Loop -> CPU.
+- A -> Đệ quy -> RAM.
+- Muốn dùng _đệ quy_ phải xác định được __điểm dừng__ không thì sẽ bị tràn stack & logic handle => tạo ra điểm dừng.
+
+- Bài tập thêm : [here](js/deQuy.js).
 
 </details>
 
