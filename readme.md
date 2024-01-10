@@ -2,6 +2,48 @@
 - Tên biến có phân biệt chữ hoa và thường và số, kí tự đầu tiên của biến phải là chữ.
 - ```alert``` chỉ hiển thị được một cái, nếu có 2 cái thì sẽ hiển thị lần lượt.
 __Sự khác biệt giữa không có ```;``` cuối dòng code và có : Nếu như viết liền trên cùng 1 dòng mà k có ```;``` thì sẽ lỗi còn nếu có thì chạy bình thường__
+<details>
+<summary></summary>
+
+Trong JavaScript, `var` và `let` là hai từ khóa để khai báo biến. Mặc dù cùng được sử dụng để khai báo biến, nhưng chúng có một số khác biệt quan trọng.
+
+1. Phạm vi (Scope):
+   - Biến được khai báo bằng `var` có phạm vi toàn cục hoặc phạm vi hàm. Nghĩa là biến có thể truy cập từ bất kỳ đâu trong cùng phạm vi đó.
+   - Biến được khai báo bằng `let` có phạm vi khối (block scope), nghĩa là biến chỉ có thể truy cập được trong cùng một khối mã (block) nơi nó được khai báo.
+
+2. Hosting:
+   - Biến được khai báo bằng `var` có hosting (hoisting). Điều này có nghĩa là dù bạn khai báo biến ở bất kỳ đâu trong phạm vi, nó sẽ được đưa lên đầu phạm vi và có thể truy cập vào biến trước khi nó được khai báo.
+   - Biến được khai báo bằng `let` không được hosting. Điều này có nghĩa là bạn chỉ có thể truy cập vào biến sau khi nó được khai báo trong khối mã hiện tại.
+
+3. Đặc tả:
+   - Biến được khai báo bằng `var` có thể được khai báo lại trong cùng phạm vi và vẫn giữ nguyên giá trị của nó.
+   - Biến được khai báo bằng `let` không thể được khai báo lại trong cùng phạm vi, nếu bạn cố gắng khai báo lại, sẽ xảy ra lỗi.
+
+- Ví dụ:
+
+```javascript
+function example() {
+  var x = 10;
+  let y = 20;
+
+  if (true) {
+    var x = 30; // Khai báo lại biến x, giá trị của x thay đổi
+    let y = 40; // Khai báo một biến mới y trong khối mã này
+    console.log(x); // Output: 30
+    console.log(y); // Output: 40
+  }
+
+  console.log(x); // Output: 30
+  console.log(y); // Output: 20
+}
+
+example();
+```
+
+- Trong ví dụ trên, chúng ta khai báo biến `x` sử dụng `var` và biến `y` sử dụng `let`. Trong khối mã bên trong `if`, chúng ta khai báo lại biến `x` sử dụng `var` và khai báo một biến mới `y` sử dụng `let`. Khi chúng ta in ra giá trị của `x` và `y` trong khối mã và sau khối mã, chúng ta thấy rằng giá trị của `x` đã thay đổi trong cùng phạm vi, trong khi giá trị của `y` vẫn giữ nguyên trong phạm vi khối và bị ảnh hưởng bởi phạm vi khác.
+
+</details>
+
 ### Cách sử dụng comments sao cho đúng
 1. Mục đích sử dụng :
 - Ghi chú.
@@ -816,13 +858,54 @@ do {
 
 ```
 - Kiểm tra điều kiện từ vòng lặp thứ 2 trở đi.
+ - Bài tập thêm : [here](js/doWhile.js).
+
 </details>
 
 <details>
-<summary>break va</summary>
+<summary>Break và Continue trong vòng lặp</summary>
 
+- ```Break``` : thoát khỏi vòng lặp.
+- ```Continue```: bỏ qua vòng lặp.
+
+ - Bài tập thêm : [here](js/continue.js).
 
 
 </details>
+
+
+<details>
+<summary>Vòng lặp lồng nhau (Nested loop)</summary>
+
+ - Bài tập thêm : [here](js/continue.js).
+
+</details>
+
+<details>
+<summary>Đệ quy là gì? Học về đệ quy!</summary>
+
+- Một cái hàm khi nó tự gọi lại chính nó.
+
+</details>
+
+<details>
+<summary></summary>
+
+
+</details>
+
+<details>
+<summary></summary>
+
+
+</details>
+
+<details>
+<summary></summary>
+
+
+</details>
+
+
 
 - Bài tập thêm : [here](js/loop.js).

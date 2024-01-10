@@ -49,3 +49,20 @@ var arrayLength = arr.length
 for( var i = 0; i < arrayLength; i) {
 
 }
+
+//----------------------------------------------------------------
+for (var i = 0; i <100; i++) {
+    console.log(i)
+}
+
+for(var i =  0 ; i <= 100; i+=5) {
+    console.log(i)
+}
+
+for (var i = 100; 0 <= i ; i --) {
+    console.log(i)
+}
+
+for (let i = 100; i >= 0; i -= 5) {
+    console.log(i);
+}

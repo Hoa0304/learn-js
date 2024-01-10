@@ -1,7 +1,13 @@
 var i = 0
-// var isSuses = 
+var isSuccses = false
+
 
 do {
     i++
-    console.log(i)
-}while (i <10)
+    console.log('Nap the lan ' + i)
+    if (true) {
+        isSuccses = true
+        break
+    }
+}while (!isSuccses && i <3)
+// du no sai thi van se thanh cong 1 lan 
