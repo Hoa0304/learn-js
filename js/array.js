@@ -3,9 +3,7 @@ var numbers = [
     3,
     5
 ]
-
 //-----------------------------------------
-
 var languages = ['js', 'ru', 'java', 'C++']
 var games = ['lien quan',
     'ngoi sao lap lanh',
@@ -28,7 +26,6 @@ console.log(languages.push('C#', 'JavaScript'))
 
 console.log(languages.shift())
 console.log(languages.unshift())
-
 
 console.log(languages.splice(0, 1))
 
@@ -53,7 +50,6 @@ function joinWithCharacter(array, charactor) {
     return array.join(charactor)
 }
 
-
 // Ví dụ khi sử dụng
 var cars = ['Honda', 'Mazda', 'Mercedes'];
 
@@ -67,8 +63,6 @@ function getLastElement(animals) {
     return cp.pop()
 }
 
-
-
 // Ví dụ sử dụng
 var animals = ['Monkey', 'Tiger', 'Elephant'];
 var result = getLastElement(animals);
@@ -81,8 +75,6 @@ function getFirstElement(animals) {
     var cp = animals.slice()
     return cp.shift()
 }
-
-
 
 // Ví dụ sử dụng
 var animals = ['Monkey', 'Tiger', 'Elephant'];

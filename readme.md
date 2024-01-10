@@ -540,13 +540,100 @@ console.log(languages.slice(1))
 <details>
 <summary>Làm việc với mảng</summary>
 
+```js
+var coures = [
+    {
+        id: 1,
+        name: 'Javascript',
+        coin: 250
+    },
+    {
+        id: 2,
+        name: 'Python',
+        coin: 100
+    },
+    {
+        id: 3,
+        name: 'C++',
+        coin: 50
+    },
+    {
+        id: 4,
+        name: 'Java',
+        coin: 100
+    },
+    {
+        id: 5,
+        name: 'C#',
+        coin: 200
+    }
+]
+```
 1. forEach(): duyệt qua đc từng phần tử của mảng.
+```js
+coures.forEach(function(course) {
+    console.log(course.name)
+})
+// Javascript
+// Python
+// C++
+// Java
+// C#
+
+coures.forEach(function(course, index) {
+    console.log(index, course)
+})
+/*
+0 { id: 1, name: 'Javascript', coin: 250 }
+1 { id: 2, name: 'Python', coin: 100 }
+2 { id: 3, name: 'C++', coin: 50 }
+3 { id: 4, name: 'Java', coin: 100 }
+4 { id: 5, name: 'C#', coin: 200 }
+*/
+```
 2. every(): kiểm tra tất cả các phần của 1 mảng phải thỏa mãn 1 điều kiện gì đó.
+
+```js
+var isFree = coures.every(function(course, index) {
+    return course.coin === 0
+})
+
+console.log(isFree)
+// false
+```
 3. some(): kiểm tra tất cả các phần của 1 mảng chỉ cần ```1 phần``` thỏa mãn 1 điều kiện gì đó thì ok.
+
+```js
+var isFree = coures.some(function(course, index) {
+    console.log(index)
+    return course.coin === 50
+})
+
+console.log(isFree)
+
+// 0
+// 1
+// 2
+// true
+```
 4. find(): tìm kiếm phần tử nếu không có thì trả về ```underfine``` chỉ trả về được 1 đối tượng. 
-5. filter(): .
+
+```js
+var course = coures.find(function(course, index) {
+    return course.name === 'Python'
+})
+
+console.log(course)
+//{ id: 2, name: 'Python', coin: 100 }
+```
+
+- Kiem tra den ```id: 2``` la stop, sau do khong check nua.
+
+5. filter(): tìm kiếm phần tử nếu không có thì trả về ```underfine``` trả về all đối tượng. .
 6. map(): .
 7. reduce(): .
+
+- Cách sử dụng : [here](js/arr.js).
 
 </details>
 
@@ -906,6 +993,18 @@ do {
 - A-> Loop -> CPU.
 - A -> Đệ quy -> RAM.
 - Muốn dùng _đệ quy_ phải xác định được __điểm dừng__ không thì sẽ bị tràn stack & logic handle => tạo ra điểm dừng.
+
+```js
+function deQuy(num) {
+    if (num <0) {
+        //Dung 
+        //...
+        return;
+    }
+    deQuy();
+}
+deQuy(10)
+```
 
 - Bài tập thêm : [here](js/deQuy.js).
 
