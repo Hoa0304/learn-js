@@ -629,8 +629,67 @@ console.log(course)
 
 - Kiem tra den ```id: 2``` la stop, sau do khong check nua.
 
-5. filter(): tìm kiếm phần tử nếu không có thì trả về ```underfine``` trả về all đối tượng. .
-6. map(): .
+5. filter(): tìm kiếm phần tử nếu không có thì trả về ```undefine``` trả về all đối tượng. .
+6. map(): Thay đổi element của một array.
+- Phải truyền vào bên trong ```map()``` , bản chất ben trong của map() là 1 vòng lặp, nó lặp qua từng phần tử của mảng.
+- mỗi khi lặp qua một phần tử sẽ gọi lại 1 function để nó thực thi.
+>> Trong thằng map() nó đang gọi lại 1 cái hư vô ```undefine()```.
+- Trong function return cái gì thì newCourses trả về cái đó.
+
+```js
+function couresHandler(course, index, originArray) {
+    return {
+        id: course.id,
+        name: `Khoa hoc: ${course.name}`,
+        coin: course.coin,
+        coinText: `Gia: ${course.coin}`,
+        index: index,
+    }
+}
+var newCourses = coures.map(couresHandler) 
+
+console.log(newCourses)
+/*
+[
+    {
+      id: 1,
+      name: 'Khoa hoc: Javascript',
+      coin: 250,
+      coinText: 'Gia: 250',
+      index: 0
+    },
+    {
+      id: 2,
+      name: 'Khoa hoc: Python',
+      coin: 100,
+      coinText: 'Gia: 100',
+      index: 1
+    },
+    {
+      id: 3,
+      name: 'Khoa hoc: C++',
+      coin: 50,
+      coinText: 'Gia: 50',
+      index: 2
+    },
+    {
+      id: 4,
+      name: 'Khoa hoc: Java',
+      coin: 100,
+      coinText: 'Gia: 100',
+      index: 3
+    },
+    {
+      id: 5,
+      name: 'Khoa hoc: C#',
+      coin: 200,
+      coinText: 'Gia: 200',
+      index: 4
+    }
+  ]
+*/
+```
+- Cách sử dụng : [here](js/map.js).
 7. reduce(): .
 
 - Cách sử dụng : [here](js/arr.js).
