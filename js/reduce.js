@@ -131,3 +131,19 @@ var getTotalGold = sports.reduce(function(total,sport) {
 },0)
 
 //------------------------------
+
+function arrToObj(arr){
+    var obj= {}
+
+    return arr.reduce(function(a,b){
+        a[b[0]] = b[1]
+        return a
+    }, obj)
+}
+ 
+// Expected results:
+var arr = [
+    ['name', 'Sơn Đặng'],
+    ['age', 18],
+];
+console.log(arrToObj(arr)); // { name: 'Sơn Đặng', age: 18 }
