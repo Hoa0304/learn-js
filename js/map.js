@@ -82,3 +82,11 @@ console.log(newCourses)
     }
   ]
 */
+//----
+function couresents(coures, index) {
+  return `<h2>${coures.name}</h2>`
+}
+
+var newCourses = coures.map(couresents)
+
+console.log(newCourses.join(''))
