@@ -1166,7 +1166,30 @@ deQuy(10)
 </details>
 
 <details>
-<summary></summary>
+<summary>includes() method</summary>
+
+- Chỉ có String/Array còn lại sẽ k có, hiển thị ra ```undefined```.
+```js
+  console.log(String.prototype.includes)
+    console.log(Array.prototype.includes)
+```
+- String :
+    - Kiểm tra có trong cái chuỗi không, Kết quả trả về là true/ false(đối số thứ nhất).
+    - Đối số thứ 2 : tìm bắt đầu từ vị trí nào, như ví dụ dưới thì sẽ kiếm ```Hoa``` bắt đầu từ vị trí số 1 trong chuỗi, thì vị trí số 1 ở đây là ở chữ ```o``` cho nên kết quả sẽ trả về là false.
+    - Nếu k truyền vị trí vào thì nó tự hiểu là 0.
+```js
+var title = "Hoa nong tinh"
+
+console.log(title.includes("Hoa"))
+console.log(title.includes("Hoa",1))
+
+```
+
+- Array:
+    - Tương tự với string nhưng đố số thứ 2 là tìm theo chỉ mục.
+    - Có thể truyển số âm (sẽ lấy độ dài của array + số âm = vị trí cần tìm).
+
+- Bài tập thêm : [here](js/includes.js).
 
 
 </details>
