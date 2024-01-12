@@ -690,9 +690,89 @@ console.log(newCourses)
 */
 ```
 - Cách sử dụng : [here](js/map.js).
-7. reduce(): .
+7. reduce(): Nhận về 1 value duy nhất khi tính toán và thay đổi .
+- Loop có ưu thế hơn : ngắn gọn, dễ hiểu, hiệu năng.
 
-- Cách sử dụng : [here](js/arr.js).
+```js
+// cach thuong
+var totalCoins= 0;
+for (var coin of course) {
+    totalCoins += course.coin
+}
+
+console.log(totalCoins)
+```
+
+- Nhận 2 đối số truyền vào : function ( bắt buộc ) và Đối số giá trị khởi tạo là 0.
+
+```js
+
+var i=0
+function coinHandler(accumulator, currentValue, currentIndex, originArray) {
+    i ++
+    console.table({
+        'Luot chay: ' : i,
+        'Bien tich tru: ' : accumulator
+
+    })
+
+    console.log(currentValue)
+
+    return accumulator + currentValue.coin;
+}
+
+var totalCoins = course.reduce(coinHandler, 0)
+
+console.log(totalCoins)
+/* so 0 duoc gan cho accumulator
+ cho so 0 minh de so nao thi accumulator se la so do
+ con lai thi all accumulator se bang undefined
+ chi can return se dinh nghia duoc accumulator cua lan chay so 2
+
+ NaN
+┌─────────────────┬────────┐
+│     (index)     │ Values │
+├─────────────────┼────────┤
+│   Luot chay:    │   1    │
+│ Bien tich tru:  │   0    │
+└─────────────────┴────────┘
+{ id: 1, name: 'Javascript', coin: 250 }
+┌─────────────────┬────────┐
+│     (index)     │ Values │
+├─────────────────┼────────┤
+│   Luot chay:    │   2    │
+│ Bien tich tru:  │  250   │
+└─────────────────┴────────┘
+{ id: 2, name: 'Python', coin: 100 }
+┌─────────────────┬────────┐
+│     (index)     │ Values │
+├─────────────────┼────────┤
+│   Luot chay:    │   3    │
+│ Bien tich tru:  │  350   │
+└─────────────────┴────────┘
+{ id: 3, name: 'C++', coin: 50 }
+┌─────────────────┬────────┐
+│     (index)     │ Values │
+├─────────────────┼────────┤
+│   Luot chay:    │   4    │
+│ Bien tich tru:  │  400   │
+└─────────────────┴────────┘
+{ id: 4, name: 'Java', coin: 100 }
+┌─────────────────┬────────┐
+│     (index)     │ Values │
+├─────────────────┼────────┤
+│   Luot chay:    │   5    │
+│ Bien tich tru:  │  500   │
+└─────────────────┴────────┘
+{ id: 5, name: 'C#', coin: 200 }
+700
+```
+
+    - accumulator : biến lưu trữ.
+    - currentValue : value hien tai.
+    - currentIndex : chi muc cua currentValue.
+    - originArray : array nào gọi đến phương thức reduce, it is course(array).
+- Cách sử dụng : [here](js/reduce.js).
 
 </details>
 
