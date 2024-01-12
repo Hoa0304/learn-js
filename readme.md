@@ -766,12 +766,28 @@ console.log(totalCoins)
 └─────────────────┴────────┘
 { id: 5, name: 'C#', coin: 200 }
 700
+
 ```
+
+    
+- Chú ý :
 
     - accumulator : biến lưu trữ.
     - currentValue : value hien tai.
     - currentIndex : chi muc cua currentValue.
     - originArray : array nào gọi đến phương thức reduce, it is course(array).
+
+<details>
+<summary>TRường hợp bỏ accumulator</summary>
+
+- Khi một object ở trong 1 array thì phải có accumulator mới giải quyết được 1 bài toán.
+    - Nếu không có thì sẽ ra 1 object thay vì 1 con số mong muốn.
+- Lấy phần tử đầu tiên của mảng có dữ liệu gì, nếu là số sẽ cho ra số.
+
+- Cách sử dụng : [here](js/flat.js).
+
+</details>
+
 - Cách sử dụng : [here](js/reduce.js).
 
 </details>
@@ -1150,7 +1166,30 @@ deQuy(10)
 </details>
 
 <details>
-<summary></summary>
+<summary>includes() method</summary>
+
+- Chỉ có String/Array còn lại sẽ k có, hiển thị ra ```undefined```.
+```js
+  console.log(String.prototype.includes)
+    console.log(Array.prototype.includes)
+```
+- String :
+    - Kiểm tra có trong cái chuỗi không, Kết quả trả về là true/ false(đối số thứ nhất).
+    - Đối số thứ 2 : tìm bắt đầu từ vị trí nào, như ví dụ dưới thì sẽ kiếm ```Hoa``` bắt đầu từ vị trí số 1 trong chuỗi, thì vị trí số 1 ở đây là ở chữ ```o``` cho nên kết quả sẽ trả về là false.
+    - Nếu k truyền vị trí vào thì nó tự hiểu là 0.
+```js
+var title = "Hoa nong tinh"
+
+console.log(title.includes("Hoa"))
+console.log(title.includes("Hoa",1))
+
+```
+
+- Array:
+    - Tương tự với string nhưng đố số thứ 2 là tìm theo chỉ mục.
+    - Có thể truyển số âm (sẽ lấy độ dài của array + số âm = vị trí cần tìm).
+
+- Bài tập thêm : [here](js/includes.js).
 
 
 </details>
