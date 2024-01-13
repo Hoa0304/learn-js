@@ -1195,8 +1195,8 @@ console.log(title.includes("Hoa",1))
 </details>
 
 <details>
-<summary></summary>
-
+<summary>Call Back</summary>
+- Là hàm ( function ) được truyền qua đối số khi gọi hàm khác.
 
 </details>
 
