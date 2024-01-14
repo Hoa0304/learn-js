@@ -1194,6 +1194,10 @@ console.log(title.includes("Hoa",1))
 
 </details>
 
+
+
+- Bài tập thêm : [here](js/loop.js).
+
 <details>
 <summary>Call Back</summary>
 - Là hàm ( function ) được truyền qua đối số khi gọi hàm khác và được gọi lại(trong hàm nhận đối số).
@@ -1215,12 +1219,10 @@ myFunction(myCallBack)
 
 </details>
 
+## DOM
+
 <details>
 <summary></summary>
 
 
 </details>
-
-
-
-- Bài tập thêm : [here](js/loop.js).
