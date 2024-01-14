@@ -1196,7 +1196,22 @@ console.log(title.includes("Hoa",1))
 
 <details>
 <summary>Call Back</summary>
-- Là hàm ( function ) được truyền qua đối số khi gọi hàm khác.
+- Là hàm ( function ) được truyền qua đối số khi gọi hàm khác và được gọi lại(trong hàm nhận đối số).
+
+
+```js
+function myFunction(param){
+
+}
+
+function myCallBack() {
+    
+}
+
+myFunction(myCallBack)
+```
+
+- Bài tập thêm : [here](js/callBack.js).
 
 </details>
 
