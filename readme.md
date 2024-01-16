@@ -2,6 +2,7 @@
 - Tên biến có phân biệt chữ hoa và thường và số, kí tự đầu tiên của biến phải là chữ.
 - ```alert``` chỉ hiển thị được một cái, nếu có 2 cái thì sẽ hiển thị lần lượt.
 __Sự khác biệt giữa không có ```;``` cuối dòng code và có : Nếu như viết liền trên cùng 1 dòng mà k có ```;``` thì sẽ lỗi còn nếu có thì chạy bình thường__
+
 <details>
 <summary>var and let</summary>
 
