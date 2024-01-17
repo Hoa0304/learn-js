@@ -64,4 +64,151 @@ console.log(promise);
 
 ### Cơ chế hoạt động của Promise
 
+- Một Promise có 1 trong 3 trạng thái sau:
+
+    -pending: trạng thái khởi tạo.
+    -fulfilled: có nghĩa thao tác đã hoàn thành thành công.
+    -rejected: có nghĩa là thao tác thất bại.
+-Một promise pending có thể thành fulfilled với kết quả, hoặc thành rejected với nguyên nhân (error). Khi option đó diễn ra, các handler liên quan sẽ thực hiện.
+    <img src="promise.png" alt="">
+- Ví dụ: Ta sẽ thử viết 1 Promise hoàn chỉnh có then và catch
+```js
+
+var promise = new Promise(function(resolve, reject) {
+
+  var value = Math.random()
+
+  if (value > 0.5) {
+
+    resolve(value)
+
+  }
+
+  reject('error')
+
+});
+
+
+
+promise.then(function(value) {
+
+  console.log(value)
+
+}).catch(function(error) {
+
+  console.log(error)
+
+})
+```
+- Ta lấy 1 giá trị ngẫu nhiên, nếu lớn hơn 0.5 thì resolve nó ra, còn không thì reject lỗi.
+
+    <img src="er.png" alt="">
+
+- Ngoài ra, ta có thể viết như thế này:
+```js
+var promise = new Promise(function(resolve, reject) {
+  var value = Math.random()
+  if (value > 0.5) {
+    resolve(value)
+  }
+  reject('error')
+});
+
+function onSuccess(value) { console.log(value) }
+function onError(error) { console.log(error) }
+promise.then(onSuccess, onError)
+```
+
+### Tại sao phải sử dụng Promise?
+
+
 - Khi mà ta sử dụng callback function, ta phải viết callback xử lý tính toán ngay lập tức (khi mà thực hiện các thao tác bất đồng bộ) nên khi mà xảy ra quá nhiều thao tác bất đồng bộ đang diễn ra, sẽ dẫn đến tình trạng các callback function lồng vào nhau.
+
+- Còn ở Promise, nó làm 1 bản cam kết sẽ thực hiện trong tương lai, ta không cần phải viết xử lý then ngay lập tức mà có thể để promise object lại đến khi sau này cần mới thực hiện.
+
+- Ví dụ: Ta cần chạy lệnh bất đồng bộ nhưng chưa cần viết hàm xử lý khi có kết quả.
+```js
+var promise = new Promise(function(resolve, reject) {
+   setTimeout(function callback() {
+       console.log(8)
+       resolve(8)
+   }, 3000)
+}) //8
+```
+
+- Khi chạy kết quả ta có thể thấy giá trị log 8 đã thực hiện, có nghĩa khi ta tạo một object promise, thì thao tác bất đồng bộ đã được thực hiện. Và khi resolve hay reject thì kết quả của xử lý bất đồng bộ này vẫn được lưu lại trong promise. Khi nào cần thì ta có thể viết hàm xử lý kết quả này.
+
+- Promise có thể hiểu là 1 biến chứa kết quả cuộc 1 lần thực hiện bất đồng bộ. Nó khác với các xử lý callback là ta có thể mang vác cái biến này đi khắp nơi trong code mà ta thấy phù hợp. Tại đó gọi hàm then chứa callback xử lý.
+
+- Vậy khi xử lý quá nhiều lệnh bất đồng bộ thì sao. lúc đó mỗi bất đồng bộ là một object promise, ta sẽ gom các promise này lại rồi xử lý tại promise all như sau:
+```js
+
+var promise1 = new Promise(function(resolve, reject) {
+   setTimeout(function callback() {
+       resolve(8)
+   }, 3000)
+})
+
+var promise2 = new Promise(function(resolve, reject) {
+   setTimeout(function callback() {
+       resolve(2)
+   }, 1000)
+})
+
+Promise.all([promise1, promise2]).then(function (values)  {
+    console.log(values)
+});
+// [ 8, 2 ]
+```
+- Như vậy, ta đã tránh được tình trạng callback hell khi có thể tách biệt các xử lý bất đồng bộ ra riêng cho đến khi tất cả kết quả bất đồng bộ đã có.
+
+> Lưu ý: Nếu trong một các promise có lỗi, thì promise.all sẽ xử lý phần catch thay vì xử lý then.
+### Promise chaining
+- Promise còn hỗ trợ cho chúng ta một kỹ thuật khá hay giúp ta kết nối các promise liên tiếp lại với nhau. Vì phương thức then (ở trường hợp promise thành công) khi return giá trị thì nó sẽ tạo một promise khác bọc lại giá trị đó, ta có thể tạo nên phương thức then phía sau để kết nối tiếp.
+
+    <img src="chaining.png" alt="">
+
+```js
+new Promise(function(resolve, reject) {
+  setTimeout(() => resolve(1), 1000);
+}).then(function(result) {
+  console.log('1:'+result)
+  return result + 1
+}).then(function(result) {
+  console.log('2:'+result)
+  return new Promise(function(resolve, reject) {
+      setTimeout(() => resolve(result * 2), 1000);
+  });
+}).then(function(result) {
+  console.log('3:'+result)
+});
+// 1:1
+// 2:2
+// 3:4
+```
+
+- _Lưu ý_: Promise chaining phải cho các phương thức then nối liền nhau mới xử lý tuần tự. Tránh trường hợp viết như thế này:
+
+```js
+var promise = new Promise(function(resolve, reject) {
+  setTimeout(function () { resolve(1) }, 1000);
+})
+
+promise.then(function(result) {
+  console.log(result); // 1
+  return result * 2;
+});
+
+promise.then(function(result) {
+  console.log(result); // 1
+  return result * 2;
+});
+
+promise.then(function(result) {
+  console.log(result); // 1
+  return result * 2;
+});
+```
+
+- Bản chất, ta đang viết 3 phương thức xử lý kết quả của promise đó:
+    <img src="then.png" alt="">
