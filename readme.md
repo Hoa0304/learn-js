@@ -212,3 +212,58 @@ promise.then(function(result) {
 
 - Bản chất, ta đang viết 3 phương thức xử lý kết quả của promise đó:
     <img src="then.png" alt="">
+
+## Async/Await là gì?
+- Async/Await là một tính năng ra đời từ ES7 nhằm giúp ta code bất đồng bộ nhìn trong đồng bộ hơn, giúp code dễ nhìn hơn và dễ sử dụng. Trong đó:
+
+    - Async function là một khái niệm định nghĩa cho hàm bất đồng bộ. Hàm bất đồng bộ này sẽ thực hiện tách rời so với phần code còn lại của Event Loop, và trả về một Promise. Cú pháp và cấu trúc của Async function làm nhìn giống chuẩn các hàm đồng bộ.
+    - Await là một cú pháp giúp tạm dừng (block) code để đợi lấy kết quả từ một Promise (Await không hoạt động với callback), và Await chỉ sử dụng được khi nằm trong Async function.
+- Ví dụ: Ta sẽ viết 1 function dùng Async/Await để xử lý 1 Promise
+
+    - Khai báo function returnPromise khi gọi sẽ return 1 promise, sau 3 giây thì promise sẽ resolve kết quả.
+    - Khai báo function asyncFunction dùng tính năng async/await, khi gọi function returnPromise  sẽ dùng await để đợi kết quả.
+
+```js
+function returnPromise() {
+    return new Promise(function(resolve,reject) {
+      setTimeout(function() {
+        resolve('finished')
+      }, 3000)
+    })
+}
+async function asyncFunction() {
+  console.log('calling')
+  var result = await returnPromise()
+  console.log(result)
+}
+asyncFunction()
+console.log('kteam')
+//calling
+//kteam
+//finished
+```
+- Như vậy:
+
+    - Khi gọi asyncFunction đầu tiên thì chương trình sẽ log ‘calling’, nhưng khi chương trình await nên chương trình thực hiện log ‘kteam’ tiếp theo.
+    - Sau 3 giây thì returnPromise có kết quả, lúc đó asyncFunction thực hiện tiếp phần code còn lại.
+## Async/Await và Promise
+- Nếu chúng ta xem qua, sẽ nghĩ rằng khi sử dụng Async/Await thì không cần phải sử dụng Promise nửa. Cũng không hẳn là vậy, vì bản chất khi ta sử dụng Async/Await chính là ta sử dụng gián tiếp Promise, khi async function return thì nó sẽ trả về 1 Promise, nếu ta hiểu bản chất sẽ biết cách áp dụng triệt để:
+
+```js
+function returnPromise() {
+    return new Promise(function(resolve,reject) {
+      setTimeout(function() {
+        resolve(5)
+      }, 3000)
+    })
+}
+async function asyncFunction() {
+  var result = await returnPromise()
+  return result + 5
+}
+var promise = asyncFunction()
+promise.then(function (value) {
+  console.log(value)
+})//10
+```
+## Cách sử dụng Async/Await hiệu quả
