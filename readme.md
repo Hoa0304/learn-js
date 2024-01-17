@@ -266,4 +266,268 @@ promise.then(function (value) {
   console.log(value)
 })//10
 ```
+- Ngoài ra: Chỉ có Promise có thể xử lý các trường hợp Callback ở các thư viện cũ, nên có lúc ta phải tự viết Promise để xử lý vấn đề cũ này.
 ## Cách sử dụng Async/Await hiệu quả
+- Khi sử dụng Async/Await nó giúp chúng ta nhìn code tường minh hơn vì giúp code trở lại đồng bộ, tuy nhiên nếu quá lạm dụng thì sẽ làm chậm code.
+
+```js
+function returnResultAfter3Seconds() {
+    return new Promise(function(resolve,reject) {
+      setTimeout(function() {
+        resolve(5)
+      }, 3000)
+    })
+}
+function returnResultAfter5Seconds() {
+    return new Promise(function(resolve,reject) {
+      setTimeout(function() {
+        resolve(5)
+      }, 5000)
+    })
+}
+async function asyncFunction() {
+  var result1 = await returnResultAfter3Seconds()
+  var result2 = await returnResultAfter5Seconds()
+  return result1 + result2
+}
+var promise = asyncFunction()
+promise.then(function (value) {
+  console.log(value)
+})
+```
+
+- Trong trường hợp này, ta có 2 hàm bất đồng bộ lần lượt mất 3 và 5 giây mới có kết quả, vì asyncFunction sử dụng await lần lượt thì mất đến 8 giây mới có thực hiện xong. Đây là vấn đề khi quá lạm dụng Async/Await khi không hiểu bản chất rõ Javascript, vì sức mạnh của ngôn ngữ Javascript chính là bất đồng bộ, khi ta viết như thế này sẽ không phát huy được tính năng của nó.
+
+>Để khắc phục tình trạng này, sử dụng Promise.all để cho 2 function chạy cùng 1 lúc, lúc đó thời gian giảm xuống còn 5 giây
+
+```js
+
+function returnResultAfter3Seconds() {
+    return new Promise(function(resolve,reject) {
+      setTimeout(function() {
+        resolve(5)
+      }, 3000)
+    })
+}
+  
+function returnResultAfter5Seconds() {
+    return new Promise(function(resolve,reject) {
+      setTimeout(function() {
+        resolve(5)
+      }, 5000)
+    })
+}
+
+async function asyncFunction() {
+  var array = await Promise.all([returnResultAfter3Seconds(), returnResultAfter5Seconds()])
+  var result = 0
+  for (var i = 0; i < array.length - 1; i++) {
+    result += array[i]
+  }
+  return result
+}
+
+var promise = asyncFunction()
+
+promise.then(function (value) {
+  console.log(value)
+})
+```
+
+# Var , let và const
+
+## Ý nghĩa của các từ khóa khai báo
+
+- _var_: là cách khai báo từ trước đến nay của Javascript, việc khai báo var xem như biến trở thành ông vua. Phạm vi của var xem như phạm vi toàn cục hoặc phạm vi nằm trong 1 function. Ví dụ khi khai báo a phạm vi toàn cục thì có thể truy cập bất cứ đâu:
+```js
+function declaration() {
+  console.log(a)
+}
+var a = 10
+declaration()
+```
+
+- _let_: là cách khai báo biến chỉ có thể truy cập trong block {} bọc nó, khác với var có thể truy cập xuyên suốt function chứa nó. Ví dụ a trong if và ngoài if vẫn là 2 biến khác nhau:
+```js
+function declaration() {
+  let a = 10
+  if (a > 5) {
+    let a = 5
+    console.log(a)
+  }
+  console.log(a)
+}
+declaration()
+// 5 10
+```
+
+- _const_: biến khai báo const sẽ thành hằng số, phạm vi truy cập const tương tự let. Ví dụ:
+```js
+function declaration() {
+  const a = 10
+  if (a > 5) {
+    const a = 5
+    console.log(a)
+  }
+  a = 6
+}
+declaration()
+```
+- Lưu ý: nếu biến const là kiểu dữ liệu tham chiếu thì giá trị thật bên trong vẫn có thể thay đổi, trừ khi thay đổi địa chỉ tham chiếu sẽ báo lỗi
+    <img src="const.png" alt="">
+```js
+const a = []
+a.push(1)
+a.push(2)
+a.push(3)
+console.log(a)
+a = []
+```
+- 
+    <img src="constt.png" alt="">
+
+## Vì sao không nên dùng Var
+- Var là cách khai báo của Javascript từ xưa đến giờ, tuy nhiên trong phát triển phần mềm nó đã sinh ra những vấn đề lớn.
+```js
+var greeter = "Hi Kteam";
+var flag = true;
+if (flag) {
+  var greeter = "Hello Kteam";
+}
+console.log(greeter)
+// Hello Kteam
+```
+
+- Vì phạm vị truy cập của var nằm khá lớn, nên trong phát triển phần mềm có khi ta gặp sai sót như đặt biến trùng tên thì có thể gặp sự cố đáng tiếc.
+
+- Hoặc khi sử dụng callback thì var có thể gặp 1 số vấn đề như sau:
+```js
+for (var i = 0; i < 5; i++) {
+  setTimeout(function(){
+    console.log(i)
+  }, 1000)
+}
+// 5 5 5 5 5 
+```
+- Lúc này, callback sẽ lấy giá trị i cuối cùng của i vì đã kết thúc vòng lặp.
+- Để khắc phục được tình trạng, ta sẽ thay thế dùng let, vì mỗi vòng lặp sẽ tạo ra 1 scope khác nhau:
+```js
+for (let i = 0; i < 5; i++) {
+  setTimeout(function(){
+    console.log(i)
+  }, 1000)
+}
+// 0 1 2 3 4 
+```
+
+> let và const được ra đời từ Javascript ES6 để cải thiện vấn đề quản lý biến, mặc dù không hủy cách khai báo var nhưng khả năng của 2 tính năng mới giúp chúng ta không cần phải sử dụng var sau này nữa.
+
+## Class
+### Bản chất hướng đối tượng trong Javascript
+- Javascript là ngôn ngữ hướng nguyên mẫu (prototype-based language), mỗi đối tượng trong Javascript có một property ẩn bên trong gọi là Prototype, nó được dùng để mở rộng các thuộc tính và phương thức.
+
+- Trước đây, các lập trình viên thường dùng cách khai báo hàm để làm tượng trưng cho kiến trúc hướng đối tượng.Class trong Javascript chính là kiểu function, nếu các bạn code Javascript từ ES5 về trước, ta sẽ khai báo bằng function.
+
+```js
+function Person(name) {
+  this.name = name
+  this.greeting = function() {
+    console.log("Hi! I'm " + this.name + '.')
+  }
+}
+a = new Person('Chau')
+a.greeting()
+// Hi! I'm Chau.
+```
+
+### Sử dụng khai báo Class ES6
+
+- Từ phiên bản ES6 trở đã tạo ra từ khóa ‘Class’ để giúp ta lập trình giống lập trình hướng đối tượng hơn, thực tế nó không phải là tính năng bổ sung, mà là giúp ta thực hiện về prototype và thừa kế sao cho clean hơn và cú pháp gọn gàng hơn.
+
+- Ví dụ: sử dụng class thì ta có phương thức constructor là phương thức khởi tạo đối tượng.
+```js
+class Person {
+  constructor(name) {
+    this.name = name
+  }
+  greeting() {
+    console.log("Hi! I'm " + this.name + '.')
+  }
+}
+
+a = new Person('Chau')
+a.greeting()
+// Hi! I'm Chau.
+
+```
+- Ta cũng có thể sử dụng super và extends để có phát triển khả năng kế thừa trong hướng đối tượng:
+```js
+class Person {
+  constructor(name) {
+    this.name = name
+  }
+  greeting() {
+    console.log("Hi! I'm " + this.name + '.')
+  }
+}
+
+class Student extends Person {
+  constructor(name, university) {
+    super(name)
+    this.university = university
+  }
+  greeting() {
+    super.greeting()
+    console.log("I was studied " + this.university)
+  }
+}
+a = new Student('Chau', 'UTE')
+a.greeting()
+// Hi! I'm Chau.
+//I was studied UTE
+```
+### Một số kiến thức Class Javascript
+#### Prototype methods
+- Có những thuộc tính mà kết quả phụ thuộc vào kết quả của giá trị thuộc tính khác thì ta sẽ dùng Prototype để tạo ra các thuộc tính động đó. Ví dụ: diện tích hình chữ nhật là chiều dài x chiều rộng.
+```js
+class Rectangle {
+  constructor(height, width) {
+    this.height = height
+    this.width = width
+  }
+  // viết từ khóa get phía trước
+  get area() {
+    return this.height * this.width
+  }
+}
+const a = new Rectangle(10, 10)
+// Ta gọi erea theo cách gọi thuộc tính bìn thường
+console.log(a.area)
+
+a.height = 5
+
+console.log(a.area)
+//100 50
+```
+
+#### Static methods
+- Static methods là phương thức có thể gọi trực tiếp từ class mà không cần phải thông qua instance (đối tượng) khai báo nào.
+```js
+class Person {
+  constructor(name) {
+    this.name = name
+  }
+  greeting() {
+    console.log("Hi! I'm " + this.name + '.')
+  }
+  static info() {
+    console.log("class describe person")
+  }
+}
+// Có thể gọi ra bình thường
+Person.info()
+// Sẽ báo lỗi vì đây là phương thức thông qua đối tượng
+Person.greeting()
+```
+- 
+    <img src="static.png" alt="">
