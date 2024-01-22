@@ -684,3 +684,99 @@ const object = new Class()
 ```
 -
      <img src="new.png" alt="">
+
+
+## Extended Parameter Handling
+
+### Tham số mặc định
+- Đây là tính năng cho phép chúng ta gán các giá trị mặc định các tham số trong hàm.
+
+```js
+const sum = function(a = 1, b = 2) {
+    return a + b
+}
+console.log(sum(2,2))
+
+console.log(sum(5))
+
+console.log(sum())
+
+// 4 7 3
+```
+### Rest Parameter
+- Rest Parameter tập hợp các tham số còn lại vào trong một tham số trong hàm.
+```js
+const log = function(...a) {
+    console.log(a)
+}
+log(1,1.2,'kteam')
+const len = (...a) => a.length
+console.log(len(1,2,1,3,12))
+
+// [ 1, 1.2, 'kteam' ]
+//5
+```
+### Spread Operator
+
+- Khá giống Rest Parameter, Spread Operator giúp chúng ta mở rộng các element cho object và array.
+
+- Ví dụ 1: mở rộng cho array và object.
+```js
+const obj1 = { name: 'chau', x: 1 }
+const obj2 = { age: '23', y: 2 }
+
+// clone obj1
+const obj3 = { ...obj1 }
+
+// merge 2 objects
+const obj4 = { ...obj1, ...obj2}
+
+console.log(obj3)
+
+console.log(obj4)
+
+const array1 = [1,2,3]
+const array2 = [4,5,6]
+
+// clone array1
+const array3 = [...array1]
+
+// merge 2 array
+const array4 = [...array1, ...array2]
+
+console.log(array3)
+console.log(array4)
+```
+
+- 
+    <img src="han.png" alt="">
+
+- Ví dụ 2: Truyền các tham số cho hàm.
+```js
+const sum = (a, b, c) => a + b + c
+const array = [1,2,3]
+
+// 3 element lần lượt gán cho các tham số
+console.log(sum(...array))
+array.push(4)
+
+// Thêm 1 element thì element sau không được nhận
+console.log(sum(...array))
+
+// 6
+// 6
+```
+
+- Ví dụ 3: Truyền các tham số cho hàm khởi tạo.
+```js
+onst date1 = new Date(2020, 1, 14)
+
+const dateFields = [2020, 01, 14]
+const date2 = new Date(...dateFields)
+
+console.log(date1)
+console.log(date2)
+```
+- 
+    <img src="hand.png" alt="">
+
