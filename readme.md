@@ -531,3 +531,156 @@ Person.greeting()
 ```
 - 
     <img src="static.png" alt="">
+
+
+## Arrow Function
+
+### Giới thiệu về Arrow Function
+- Arrow Function là sự thay thế nhỏ gọn của function tiêu chuẩn về mặt cú pháp được giới thiệu từ ES6, Arrow Function rất phù hợp những phương thức không có sử dụng constructors.
+
+```js
+// Function tiêu chuẩn
+const def1 = function() {
+  return 'kteam'
+}
+
+// Arrow Function
+const def2 = () => {
+  return 'kteam'
+}
+
+// Arrow Function rút gọn hơn khi chỉ có câu lệnh return
+const def3 = () => 'kteam'
+console.log(def1())
+console.log(def2())
+console.log(def3())
+//kteam kteam kteam
+```
+
+- Ta có thể khai báo tham số trong Arrow Function.
+
+```js
+const hello = (name) =>  {
+  console.log("Hello " + name)
+}
+hello('Hoa')
+```
+### Không tách rời this
+- Trước khi Arrow Function ra đời, mỗi function khi định nghĩa this dựa vào cách function được gọi như thế nào.
+
+- Nếu một object sau khi được khởi tạo gọi function, thì this trong function đó chính là object đó.
+
+```js
+function Person() {
+  this.age = 12
+  this.getAge = function() {
+    // this ở đây chính là đối tượng gọi function
+    return this.age
+  }
+}
+
+// khởi tạo đối tượng p
+const p = new Person()
+
+// khi gọi getAge, this chính là đối tượng p
+console.log(p.getAge())
+```
+
+- Tuy nhiên, trong trường hợp sử dụng callback function, function callback không được thực thi trong global object, nên định nghĩa this của function này không phải là đối tượng khởi tạo.
+
+```js
+function Person() {
+  this.age = 12
+  setTimeout(function getAge() {
+    // This ở đây là global object
+    // nếu được gọi ở Browser thì đây là window
+    console.log(this)
+    // Global Object không có định nghĩa thuộc tính age
+    console.log(this.age)
+  }, 2000)
+}
+const p = new Person()
+// undefined
+```
+
+- Nên trước khi Arrow Function ra đời, Lập trình viên thường phải lưu tạm giá trị this vào 1 biến hoặc sử dụng bind.
+- Ví dụ 1: lưu tạm biến this.
+
+```js
+function Person() {
+  this.age = 12
+  const that = this
+  setTimeout(function getAge() {
+    // This ở đây là global object
+    // nếu được gọi ở Browser thì đây là window
+    console.log(that)
+    // Global Object không có định nghĩa thuộc tính age
+    console.log(that.age)
+  }, 2000)
+}
+const p = new Person()
+// Person { age: 12 }
+// 12
+```
+
+- Ví dụ 2: Sử dụng bind.
+
+```js
+function Person() {
+  this.age = 12
+  this.getAge = function() {
+    console.log(this)
+    console.log(this.age)
+  }
+  // Dùng bind để trỏ this trong function gán với tham số trong hàm bind
+  setTimeout(this.getAge.bind(this), 2000)
+}
+const p = new Person()
+```
+
+- Công việc đơn giản như vậy nhưng cách xử lý quá lòng vòng. Nên từ khi ra Arrow Function, mọi chuyện đã được giải quyết nhanh gọn.
+
+```js
+function Person() {
+  this.age = 12
+  // This ở đây sẽ gán this trong function Person
+  // This trong function Person chính là đối tượng được khởi tạo ra
+  setTimeout(() => {
+    console.log(this)
+    console.log(this.age)
+  }, 2000)
+}
+const p = new Person()
+// Person { age: 12 }
+// 12
+```
+### Không binding arguments
+- Ở function tiêu chuẩn, ta có thể lấy giá trị tham số qua arguments.
+
+```js
+function def(a, b, c) {
+  console.log(arguments[0])
+  console.log(arguments[1])
+  console.log(arguments[2])
+}
+def(1,2,3)
+// 1 2 3
+```
+
+- Nhưng với Arrow Function, nó không có arguments, nên nếu có sử dụng thì nó hiểu đang lấy giá trị từ biến arguments.
+```js
+const arguments = 'hoa'
+const a = () => arguments
+console.log(a())
+//hoa
+```
+### Không thể dùng new
+
+- Arrow Function không thể khởi tạo đối tượng, nên chúng ta có thể sử dụng tạo ra các hàm không có mục đích sử dụng hướng đối tượng.
+
+```js
+const Class = () => {}
+const object = new Class()
+```
+-
+     <img src="new.png" alt="">
