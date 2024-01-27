@@ -1225,5 +1225,5 @@ myFunction(myCallBack)
 <details>
 <summary>HTML DOM là gì?</summary>
 
-
+- Document Object Model 
 </details>
