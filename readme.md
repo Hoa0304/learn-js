@@ -1225,5 +1225,35 @@ myFunction(myCallBack)
 <details>
 <summary>HTML DOM là gì?</summary>
 
-- Document Object Model 
+- Document Object Model : mô hình tài lịu dc thể hịn dưới dạng đối tượng .
+- Khi trang web đc tải, trình duỵt tạo ra 1 DOM trên trang web của chúng ta.
+- Khi trang web tải xong thì trình duyệt nhận được chuỗi html.
+- Dựa vào quy chuẩn tạo ra 1 mô hình dạng cây và mô hình đó được gọi là DOM chứ không phải chuỗi html là DOM.
+
+<img src= "HTML_DOM.png"></img>
+
+- Nói về sơ đồ cây :
+    - DOM Có 3 thành phần : Element, attribute, text.
+    - Document thể hiện cái file html, cứ là thẻ tag thì là element, attribute là những thuộc tính nằm trong thẻ mở.
+    - Mỗi một ô vuông là 1 node(điểm giao nhau)
+
+</details>
+
+
+- Muốn vào các thành phần phải thông qua ```document```.
+
+
+#### Get element methods
+
+
+
+
+- Bài tập thêm : [here](js/DOM.js).
+
+
+<details>
+<summary></summary>
+
+
+
 </details>
