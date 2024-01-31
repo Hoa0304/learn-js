@@ -1245,11 +1245,44 @@ myFunction(myCallBack)
 
 #### Get element methods
 
+1. getElementById: trả về trực tiếp element, chỉ trả về cóa 1 phần tử.
+2. getElementsByClassName: trả về HTMLCollection.
+3. getElementsByTagName: trả về HTMLCollection .
+4. querySelector: trả về trực tiếp element, chỉ trả về cóa 1 phần tử.
+5. querySelectorAll: trả về NodeList.
+
+> HTMLCollection, NodeList:tính chất giống với array, chỉ khác là k có map ni tê á.
+
+6. HTML collection: 1 số HTML trong DOM sẽ được quy thành HTML collection: ```img```, ```a```, ```forms``` .
 
 
+7. document.write: tùy thuộc vào mình đặt file js ở đâu trong html.
 
 - Bài tập thêm : [here](js/DOM.js).
 
+#### DOM attribute
+- Muốn dùng phải kiu quẻ element trước. 
+- Gán trực tiếp và setter thì set add được những attribute không tồn tại của thẻ đó(mình tùy biến).
+
+#### InnerText vs textContent Property : lấy ra nội dung của textNode trong 1 element Node
+- Nó là 1 thuộc tính có trong element node, đã là thuộc tính thì có thể gọi trực tiếp.
+- InnerText: lấy ra nội dung NHÌN THẤY TRÊN TRÌNH DUYỆT.
+- textContent: lấy ra nội dung thực của DOM.
+- Bài tập thêm : [here](js/property.js).
+
+
+<details>
+<summary>InnerHTML vs OuterHTML Property</summary>
+- InnerHTML : có thể lấy ra or thêm vào.
+- Set/ Get element trong element, attributeNode vào 1 element.
+- InnerHTML : lấy ra ở bên trong còn Outer thì lấy luôn cái tk mình gọi.
+- Dùng innerHTML khi thêm 1 element vào thì nó sẽ ở trong cái element mình gọi, còn quỉ outer thì nó đè lên.
+
+- Bài tập thêm : [html](html/inner.html).
+
+- Bài tập thêm : [js](js/inner.js).
+
+</details>
 
 <details>
 <summary></summary>
