@@ -1315,6 +1315,135 @@ myFunction(myCallBack)
 
 </details>
 
+
+## JSON, Fetch, Postman
+<details>
+<summary>JSON là gì ?</summary>
+- Viết tắt của JavaScript Object Notation.
+- Là một định dạng dữ liệu (chuỗi), __Nó định dạng dữ liệu thui__.
+- Thể hiện được dưới dạng : number, Boolen, Null, array, object; biến các kiểu này sang json.
+- Mấy cái như function thì sẽ không chuyển đổi dưới dạng json được.
+- Mã hóa ( encode ) và giải mã ( decode ) đúng nhất là Stringify( chuyển đổi : từ js types -> JSON )/ Parse (cho trở lại ban đầu).
+
+- Phương thức ``` JSON.parse ``` nhận vào 1 chuỗi JSON và chuyển hóa nó thành dạng dữ liệu gốc.
+
+- Phương thức ```JSON.stringify``` dùng để chuyển dạng dữ liệu gốc thành dạng JSON
+- Cách truyển dạng : number , boolen, null .
+
+```js
+var json = 'null'
+```
+- Chuyển sang js :  
+
+```js
+var json = 'abc'
+
+console.log(JSON.parse(json)) 
+```
+
+- Cách truyển dạng : array .
+
+```js
+var json = '["Javascript", "PHP"]'
+console.log(JSON.parse(json)) 
+```
+
+- Cách truyển dạng : object .
+
+```js
+var json = '{"name": "test", "age": 19}'
+
+console.log(JSON.parse(json)) 
+```
+
+- Bài tập thêm : [here](JSONFetchPostman/json.js).
+
+</details>
+
+
+<details>
+<summary>Promise (sync, async)</summary>
+
+- Đồng bộ (sync).
+- Bất đồng bộ (async).
+- Sử dụng những cái này sẽ là bất đồng bộ : ```setTimeout```, ```setInterval```, ```fetch```, ```XMLHttpRequest```, đọc file (file reading ) , request animation frame.
+    - ```fetch``` : gọi 1 cái yêu cầu qua internet.
+> để xử lý thì ngta dùng callback
+
+```js
+setTimeout(function() {
+    console.log(1);
+},2000)
+
+console.log(2)
+// bất đồng bộ in ra 2 rồi mới đến 1
+```
+
+- Callback : 
+```js
+function() {
+    console.log(1);
+}
+```
+- Callback hell: sử dụng callback lồng callback.
+- Pyramid of doom.
+> Khi nào đụng callback hell mới dùng promise
+```js
+setTimeout(function() {
+    console.log(1);
+    setTimeout(function() {
+        console.log(2);
+        setTimeout(function() {
+            console.log(3);
+            setTimeout(function() {
+                console.log(4);
+                setTimeout(function() {
+                    console.log(5);
+                    setTimeout(function() {
+                        console.log(6);
+                    },1000)
+                },1000)
+            },1000)
+        },1000)
+    },1000)
+},1000)
+=> callback hell
+```
+- Có 3 phương thức hay sử dụng : 
+
+    - ```.then()```.
+    - ```.catch()```: bẫy lỗi(bắt lỗi).
+    - ```.finally()```.
+
+học lại video 167,170.
+- Promise có 3 trạng thái:
+
+    - Pending.
+    - Fulfilled.
+    - Rejected.
+
+<details>
+<summary>3 trạng thái này xra khi nào ?</summary>
+
+
+
+</details>
+
+</details>
+
+
+- Bài tập thêm : [here](JSONFetchPostman/promise.js).
+
+Fetch 
+DOM location
+Local storage 
+Session storage
+Coding convention
+Best Practices 
+Mistakes
+Performance
+
+
 <details>
 <summary></summary>
 
