@@ -1273,14 +1273,41 @@ myFunction(myCallBack)
 
 <details>
 <summary>InnerHTML vs OuterHTML Property</summary>
-- InnerHTML : có thể lấy ra or thêm vào.
+- InnerHTML : có thể lấy ra or thêm vào, lấy ra khi ch thực hiện outer.
 - Set/ Get element trong element, attributeNode vào 1 element.
 - InnerHTML : lấy ra ở bên trong còn Outer thì lấy luôn cái tk mình gọi.
+
 - Dùng innerHTML khi thêm 1 element vào thì nó sẽ ở trong cái element mình gọi, còn quỉ outer thì nó đè lên.
+
+>  Tóm lại: outer dùng để ghi đè.
 
 - Bài tập thêm : [html](html/inner.html).
 
 - Bài tập thêm : [js](js/inner.js).
+
+</details>
+
+
+- Thuộc tính biến mọi tab sang input ```contenteditable=""```.
+
+<details>
+<summary>ClassList Property</summary>
+
+> DOMTokenList: quản lí class của element đang gọi đến
+
+1. Add: .
+2. contains:kiểm tra 1 class có nằm trong element này hay không.
+3. remove: .
+4. toggle: nếu class đó có thì xóa còn k có thì thêm.
+
+- Bài tập thêm : [here](js/classList.html).
+
+</details>
+
+<details>
+<summary>DOM events</summary>
+
+- Bài tập thêm : [here](js/events.html).
 
 </details>
 
