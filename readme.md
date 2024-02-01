@@ -1307,6 +1307,10 @@ myFunction(myCallBack)
 <details>
 <summary>DOM events</summary>
 
+
+1. Attribute events: .
+2. Assign event using the element node: .
+
 - Bài tập thêm : [here](js/events.html).
 
 </details>
