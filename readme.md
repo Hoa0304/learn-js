@@ -1447,16 +1447,51 @@ setTimeout(function() {
 
 - Bài tập thêm : [here](JSONFetchPostman/promise.js).
 
+### ECMAScript 6
 
 <details>
-<summary>Thêm/sửa/xóa khóa học với Fetch và REST API</summary>
+<summary>Let & Const</summary>
+
+1. Phạm vi truy cập (scope) và Hosting : var/ let, const.
+    - Var : bên trong lẫn bên ngoài đều thực hiện, được hỗ trợ hosting.
+    - let / const: chỉ bên trong block thực hiện được .
+
+2. Assignment: const/ var, let.
+    - Const k thể gán được lại lần 2.
+
+</details>
+
+
+<details>
+<summary>Template literals</summary>
 
 
 
 </details>
 
 
+<details>
+<summary>Arrow function</summary>
 
+
+
+</details>
+
+#### Enhanced object literals
+
+1. Định nghĩa key: value cho object.
+2. Định nghĩa method cho object.
+3. Định nghĩa key cho objetc dưới dạng biến.
+
+#### Destructuring, Rest
+- Destructuring: phân rã là lấy trực tiếp các element mà k cần thông qua ( dùng vs object và array).
+- Khi là rest thì sử dụng với destructuring.
+- Rest là lấy ra phần tử còn lại.
+
+#### Spread
+
+
+> Phân biệt được rest và spread
 <details>
 <summary></summary>
 
