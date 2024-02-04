@@ -1423,11 +1423,22 @@ setTimeout(function() {
 172.173
 <details>
 <summary>Fetch</summary>
-- Fetche nhận dc 1 promise nó return lại.
+- Fetch nhận dc 1 promise nó return lại.
 - API : Application programing interface( Cổng giao tiếp giữa các PM ).
 
 ##### JSON server
-
+- Chỉ cài trg 1 folder.
+- ```npm init``` dòng cuối thì ```yes```.
+- tiếp ```npm i json-server```.
+- Tạo 1 file json.
+- Start : tại file ```package.json``` add ```"start": "json-server --watch db.json",```.
+```json
+  "scripts": {
+    "start": "json-server --watch db.json",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+```
+- Gõ ```npm start``` là run được.
 
 </details>
 
@@ -1436,14 +1447,14 @@ setTimeout(function() {
 
 - Bài tập thêm : [here](JSONFetchPostman/promise.js).
 
-Fetch 
-DOM location
-Local storage 
-Session storage
-Coding convention
-Best Practices 
-Mistakes
-Performance
+
+<details>
+<summary>Thêm/sửa/xóa khóa học với Fetch và REST API</summary>
+
+
+
+</details>
+
 
 
 <details>
