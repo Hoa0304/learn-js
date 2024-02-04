@@ -1411,20 +1411,22 @@ setTimeout(function() {
 ```
 - Có 3 phương thức hay sử dụng : 
 
-    - ```.then()```.
+    - ```.then()```: có thể có nhiều chuỗi này, nó cũng là 1 function.
     - ```.catch()```: bẫy lỗi(bắt lỗi).
     - ```.finally()```.
 
-học lại video 167,170.
 - Promise có 3 trạng thái:
 
-    - Pending.
-    - Fulfilled.
-    - Rejected.
-
+    - Pendding: __đang chờ__ thành công hay là thất bại, rò rỉ bộ nhớ.
+    - Fulfilled: thành công(lọt vào ```.then``` và ```finally```).
+    - Rejected: thất bại(lọt vào ```.catch``` và ```finally```).
+172.173
 <details>
-<summary>3 trạng thái này xra khi nào ?</summary>
+<summary>Fetch</summary>
+- Fetche nhận dc 1 promise nó return lại.
+- API : Application programing interface( Cổng giao tiếp giữa các PM ).
 
+##### JSON server
 
 
 </details>
