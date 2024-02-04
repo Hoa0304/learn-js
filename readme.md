@@ -1490,7 +1490,7 @@ setTimeout(function() {
 
 #### Spread
 
-
+- Bài tập thêm : [here](es6/spread.js).
 > Phân biệt được rest và spread
 <details>
 <summary></summary>
